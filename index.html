@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="luxe">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'" />
+  <meta name="description" content="BackStage 出勤スケジュール" />
+  <title>出勤スケジュール | BackStage</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme-luxe.css" />
+  <link rel="stylesheet" href="css/theme-clean.css" />
+</head>
+<body>
+  <!-- トップビュー: 今週ストリップ + 月カレンダー -->
+  <main id="topView" class="top" hidden>
+    <header class="hero">
+      <p class="hero__eyebrow">SHIFT SCHEDULE</p>
+      <h1 class="hero__title">出勤スケジュール</h1>
+    </header>
+
+    <section class="week" aria-label="今週のシフト">
+      <h2 class="section__title"><span class="section__en" id="weekRangeEn"></span>今週のシフト</h2>
+      <div class="week__strip" id="weekStrip"></div>
+    </section>
+
+    <section class="cal" aria-label="月間カレンダー">
+      <div class="cal__nav">
+        <button type="button" class="cal__btn" id="calPrev" aria-label="前の月">◀</button>
+        <h2 class="cal__month" id="calMonth"></h2>
+        <button type="button" class="cal__btn" id="calNext" aria-label="次の月">▶</button>
+      </div>
+      <div class="cal__grid" id="calGrid"></div>
+      <p class="cal__hint">シフトが公開されている日をタップすると、その日の出勤キャストが見られます。</p>
+    </section>
+  </main>
+
+  <!-- 日ビュー: その日のシフト表 / 画像 -->
+  <main id="dayView" class="day" hidden>
+    <div class="day__bar">
+      <button type="button" class="day__back" id="dayBack">← カレンダー</button>
+      <div class="day__nav">
+        <button type="button" class="cal__btn" id="dayPrev" aria-label="前の日">◀</button>
+        <h1 class="day__date" id="dayDate"></h1>
+        <button type="button" class="cal__btn" id="dayNext" aria-label="次の日">▶</button>
+      </div>
+    </div>
+    <div class="day__tabs" id="dayTabs" role="tablist">
+      <button type="button" class="day__tab" id="tabTable" role="tab">シフト表</button>
+      <button type="button" class="day__tab" id="tabImage" role="tab">画像</button>
+    </div>
+    <section class="sched" id="schedTable" aria-label="シフト表"></section>
+    <section class="sched sched--image" id="schedImage" hidden aria-label="シフト画像">
+      <img id="schedImg" alt="この日のシフト画像" loading="lazy" />
+    </section>
+  </main>
+
+  <!-- 画像の拡大表示（X風ライトボックス）。クリックまたはEscで閉じる -->
+  <button type="button" id="lightbox" class="lightbox" hidden aria-label="拡大表示を閉じる">
+    <img id="lightboxImg" alt="シフト画像の拡大表示" />
+  </button>
+
+  <!-- プロトタイプ用テーマ切替（トーン確定後に削除する） -->
+  <button type="button" id="themeToggle" class="theme-toggle" title="テーマ切替（プロトタイプ用）"></button>
+
+  <script src="shift-data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

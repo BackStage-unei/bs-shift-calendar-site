@@ -1,0 +1,385 @@
+/* =============================================================
+ * style.css — 構造スタイル（テーマ非依存）
+ *
+ * 色・フォント・装飾はすべて CSS変数を参照する。値の定義は
+ * theme-luxe.css / theme-clean.css（:root[data-theme=…]）が行い、
+ * このファイルには具体的な色を書かないこと。
+ * ============================================================= */
+/* ---------- フォント: LINE Seed JP（セルフホスト、OFLライセンス=assets/fonts/OFL.txt） ---------- */
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('../assets/fonts/LINESeedJP_OTF_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('../assets/fonts/LINESeedJP_OTF_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LINE Seed JP';
+  src: url('../assets/fonts/LINESeedJP_OTF_Eb.woff2') format('woff2');
+  font-weight: 800 900;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+/* display:flex 等を持つ要素でも hidden 属性を必ず効かせる */
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: hidden; overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ja);
+  font-size: 15px;
+  line-height: 1.7;
+}
+img { max-width: 100%; }
+button {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+button:disabled { cursor: default; }
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
+
+/* ---------- ヒーロー ---------- */
+.hero { text-align: center; padding: clamp(28px, 6vw, 56px) 0 8px; }
+.hero__eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  color: var(--text-sub);
+}
+.hero__title {
+  margin: 0;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- セクション見出し ---------- */
+.section__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 28px 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.section__en {
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+/* ---------- 今週ストリップ ---------- */
+.week__strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 108px; /* 全公開日を並べる横スライダー（過去週へもスワイプ可） */
+  gap: 6px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 12px 2px 10px; /* 上12px = TODAYバッジ（top:-8px）の見切れ防止 */
+}
+.week__day {
+  position: relative;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 10px 10px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: left;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.week__day:not(:disabled):hover { transform: translateY(-2px); border-color: var(--accent); }
+.week__day:disabled { opacity: 0.45; }
+.week__day.is-today {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+    var(--grad) border-box;
+}
+.week__dayhead { display: flex; align-items: baseline; gap: 6px; }
+.week__wd {
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-sub);
+}
+.week__day.is-today .week__wd { color: var(--accent); }
+.week__num { font-family: var(--font-en); font-weight: 800; font-size: 20px; }
+.week__todaybadge {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 1px 7px;
+  border-radius: 99px;
+  background: var(--grad);
+  color: var(--badge-text);
+}
+.week__faces { display: flex; flex-wrap: wrap; gap: 3px; min-height: 24px; align-items: center; }
+.week__more, .week__count { font-family: var(--font-en); font-size: 11px; color: var(--text-sub); }
+.week__empty { font-size: 11px; color: var(--text-sub); }
+
+/* ---------- 丸アイコン ---------- */
+.face {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1.5px solid var(--line);
+  background: var(--surface-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.face--initial { font-size: 11px; font-weight: 700; color: var(--text-sub); }
+.face.rank-gold { border-color: var(--gold); }
+.face.rank-silver { border-color: var(--silver); }
+.face.rank-bronze { border-color: var(--bronze); }
+
+/* ---------- 月カレンダー ---------- */
+.cal { margin-top: 8px; }
+.cal__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 24px 0 10px;
+}
+.cal__month {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  min-width: 8em;
+  text-align: center;
+}
+.cal__btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12px;
+  color: var(--text-sub);
+}
+.cal__btn:not(:disabled):hover { border-color: var(--accent); color: var(--accent); }
+.cal__btn:disabled { opacity: 0.3; }
+.cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal__wd {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-sub);
+  padding: 4px 0;
+}
+.cal__cell {
+  min-height: 56px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 6px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-sub);
+}
+.cal__cell.has-data {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.cal__cell.has-data:hover { transform: translateY(-2px); border-color: var(--accent); }
+.cal__cell.is-out { opacity: 0.35; }
+.cal__cell.is-today {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+    var(--grad) border-box;
+  color: var(--text);
+}
+.cal__daynum { font-family: var(--font-en); font-weight: 700; font-size: 14px; }
+.cal__count {
+  font-family: var(--font-en);
+  font-size: 10px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.cal__hint { text-align: center; font-size: 12px; color: var(--text-sub); margin: 14px 0 0; }
+
+/* ---------- 日ビュー ---------- */
+.day__bar { display: flex; flex-direction: column; gap: 6px; padding-top: 22px; }
+.day__back { align-self: flex-start; font-size: 13px; color: var(--text-sub); }
+.day__back:hover { color: var(--accent); }
+.day__nav { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.day__date { margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.06em; }
+
+.day__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+.day__tab {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 22px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  color: var(--text-sub);
+  background: var(--surface);
+}
+.day__tab.is-active {
+  background: var(--grad);
+  color: var(--badge-text);
+  border-color: transparent;
+}
+
+/* シフト表（時刻レール × キャストチップ） */
+.sched { margin-top: 16px; border-top: 1px solid var(--line); }
+.sched__row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.sched__row.is-empty { padding: 4px 0; }
+.sched__time {
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-sub);
+  padding-top: 6px;
+  text-align: right;
+}
+.sched__row.is-empty .sched__time { font-size: 12px; padding-top: 0; }
+.sched__casts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.sched__none { color: var(--text-sub); opacity: 0.5; font-size: 12px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 5px;
+  border-radius: 99px;
+  border: 1.5px solid var(--line);
+  background: var(--chip-bg);
+  font-size: 13px;
+  font-weight: 500;
+}
+.chip .face { width: 26px; height: 26px; border-radius: 50%; border-width: 0; }
+.chip__name { letter-spacing: 0.02em; }
+.chip.rank-gold { border-color: var(--gold); background: var(--gold-bg); }
+.chip.rank-gold .chip__name { color: var(--gold-text); }
+.chip.rank-silver { border-color: var(--silver); background: var(--silver-bg); }
+.chip.rank-silver .chip__name { color: var(--silver-text); }
+.chip.rank-bronze { border-color: var(--bronze); background: var(--bronze-bg); }
+.chip.rank-bronze .chip__name { color: var(--bronze-text); }
+.chip.rank-normal { border-color: var(--normal); background: var(--normal-bg); }
+.chip.rank-normal .chip__name { color: var(--normal-text); }
+
+/* 画像タブ */
+.sched--image { border-top: none; text-align: center; }
+.sched--image img {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+}
+
+/* ライトボックス（X風: 背景グレーアウト + 拡大表示） */
+@keyframes lightboxIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(8, 7, 12, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  cursor: zoom-out;
+  border: none;
+  animation: lightboxIn 0.18s ease;
+}
+.lightbox img {
+  max-width: min(1400px, 97vw);
+  max-height: 94vh;
+  border-radius: 10px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+body.lightbox-open { overflow: hidden; }
+
+/* ---------- テーマ切替（プロトタイプ用） ---------- */
+.theme-toggle {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 10;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-sub);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- ビュー遷移アニメーション ---------- */
+@keyframes viewIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.view-anim { animation: viewIn 0.28s ease both; }
+
+/* ---------- モーション設定尊重 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- モバイル（iframe内 375px想定） ---------- */
+@media (max-width: 480px) {
+  .cal__cell { min-height: 48px; border-radius: 10px; }
+  .cal__count { font-size: 9px; }
+  .sched__row { grid-template-columns: 52px 1fr; }
+  .chip { font-size: 12px; }
+}
