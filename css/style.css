@@ -38,6 +38,10 @@ body {
   font-size: 15px;
   line-height: 1.7;
 }
+/* 埋め込み先（STUDIO）の背景に馴染ませる背景モード（URLの ?bg= で指定）
+   clear = 完全透過 / veil = 半透明ベール（テーマごとの --veil 色） */
+html[data-bg='clear'] body { background: transparent; }
+html[data-bg='veil'] body { background: var(--veil); }
 img { max-width: 100%; }
 button {
   font-family: inherit;

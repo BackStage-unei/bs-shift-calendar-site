@@ -31,6 +31,12 @@
   let theme = params.get('theme') || safeGet('shiftcal-theme') || 'luxe';
   applyTheme(theme);
 
+  // 背景モード（埋め込み先に馴染ませる）: ?bg=clear（完全透過） / ?bg=veil（半透明ベール）
+  const bgMode = params.get('bg');
+  if (bgMode === 'clear' || bgMode === 'veil') {
+    document.documentElement.dataset.bg = bgMode;
+  }
+
   function applyTheme(t) {
     theme = (t === 'clean') ? 'clean' : 'luxe';
     document.documentElement.dataset.theme = theme;

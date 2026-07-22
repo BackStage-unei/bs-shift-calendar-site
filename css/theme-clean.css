@@ -6,6 +6,7 @@
  * ============================================================= */
 :root[data-theme='clean'] {
   --bg: #ffffff;
+  --veil: rgba(255, 255, 255, 0.85); /* ?bg=veil 用の半透明白ベール */
   --surface: #fafafa;
   --surface-2: #ffffff;
   --line: #e2e8f0;
