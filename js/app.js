@@ -26,35 +26,15 @@
   const allDates = [...dayByDate.keys()].sort();
   const TODAY = todayJST();
 
-  // ---------- テーマ（プロトタイプ比較用） ----------
+  // テーマは luxe に一本化済み（2026-07-23 決定。html の data-theme="luxe" 固定）
+
   const params = new URLSearchParams(location.search);
-  let theme = params.get('theme') || safeGet('shiftcal-theme') || 'luxe';
-  applyTheme(theme);
 
   // 背景モード（埋め込み先に馴染ませる）: ?bg=clear（完全透過） / ?bg=veil（半透明ベール）
   const bgMode = params.get('bg');
   if (bgMode === 'clear' || bgMode === 'veil') {
     document.documentElement.dataset.bg = bgMode;
   }
-
-  function applyTheme(t) {
-    theme = (t === 'clean') ? 'clean' : 'luxe';
-    document.documentElement.dataset.theme = theme;
-    const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = theme === 'luxe' ? 'テーマ: ダーク（luxe）' : 'テーマ: ライト（clean）';
-  }
-
-  function safeGet(key) {
-    try { return localStorage.getItem(key); } catch (e) { return null; }
-  }
-  function safeSet(key, value) {
-    try { localStorage.setItem(key, value); } catch (e) { /* sandbox では保存しない */ }
-  }
-
-  document.getElementById('themeToggle').addEventListener('click', () => {
-    applyTheme(theme === 'luxe' ? 'clean' : 'luxe');
-    safeSet('shiftcal-theme', theme);
-  });
 
   // ---------- ルーティング ----------
   let canHistory = true;
