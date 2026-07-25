@@ -540,9 +540,17 @@ body.pop-open { overflow: hidden; }
 .profile-card.rank-bronze { --rank-1: var(--bronze-1); --rank-2: var(--bronze-2); --rank-3: var(--bronze-3); }
 .profile-card.ranked {
   border-color: color-mix(in srgb, var(--rank-2) 55%, transparent);
-  padding: 28px 22px;
+  /* パディングは pr-inner が持つ（額縁をコンテンツ全高に追従させるため） */
+  padding: 0;
 }
-.profile-card.ranked > :not(.pr-frame):not(.pr-watermark) { position: relative; }
+/* スクロールする中身のラッパー。position:absolute の額縁の基準をここにすることで、
+   カードの見えている高さではなくコンテンツ全高に額縁が追従する */
+.pr-inner {
+  position: relative;
+  padding: 28px 22px;
+  min-height: 100%;
+}
+.pr-inner > :not(.pr-frame):not(.pr-watermark) { position: relative; }
 .pr-frame {
   position: absolute;
   inset: 8px;

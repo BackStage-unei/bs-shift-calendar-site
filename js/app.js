@@ -340,26 +340,30 @@
     castPopCard.className = 'profile-card'
       + (info.r ? ` rank-${info.r}` : '')
       + (ranked ? ' ranked' : '');
+    // ランク勢は額縁(pr-frame)をコンテンツ全高に追従させるため、スクロールする
+    // カード直下ではなく内側ラッパー(pr-inner)に額縁ごと入れる
+    const body = ranked ? el('div', 'pr-inner') : castPopCard;
     if (ranked) {
-      castPopCard.append(el('div', 'pr-frame'));
-      castPopCard.append(el('span', 'pr-watermark', info.r.toUpperCase()));
+      body.append(el('div', 'pr-frame'));
+      body.append(el('span', 'pr-watermark', info.r.toUpperCase()));
+      castPopCard.append(body);
     }
     if (info.i) {
       const img = el('img', 'cast-icon');
       img.src = info.i;
       img.alt = name;
-      castPopCard.append(img);
+      body.append(img);
     } else {
-      castPopCard.append(el('span', 'cast-icon cast-icon--initial', name.slice(0, 1)));
+      body.append(el('span', 'cast-icon cast-icon--initial', name.slice(0, 1)));
     }
-    castPopCard.append(el('p', `cast-name${ranked ? ' pr-name' : ''}`, name));
+    body.append(el('p', `cast-name${ranked ? ' pr-name' : ''}`, name));
     if (info.r) {
-      castPopCard.append(el('p', `rank-badge rank-${info.r}`, `${info.r.toUpperCase()} CLASS`));
+      body.append(el('p', `rank-badge rank-${info.r}`, `${info.r.toUpperCase()} CLASS`));
     }
     const ranges = day ? shiftRangeLabel(day.slots, name) : '';
-    if (ranges) castPopCard.append(el('span', 'shift-badge', `この日の出勤 ${ranges}`));
+    if (ranges) body.append(el('span', 'shift-badge', `この日の出勤 ${ranges}`));
     if (info.p && info.p.catch) {
-      castPopCard.append(el('p', `profile-catch${ranked ? ' pr-catch' : ''}`, info.p.catch));
+      body.append(el('p', `profile-catch${ranked ? ' pr-catch' : ''}`, info.p.catch));
     }
     if (info.app) {
       // BackStage アプリのキャストページへの Deeplink（未インストール時はストア）
@@ -367,12 +371,12 @@
       a.href = info.app;
       a.target = '_blank';
       a.rel = 'noopener';
-      castPopCard.append(a);
+      body.append(a);
     }
     if (info.tags && info.tags.length) {
       const wrap = el('div', 'match-tags');
       for (const t of info.tags) wrap.append(el('span', 'match-tag', t));
-      castPopCard.append(wrap);
+      body.append(wrap);
     }
     if (info.specs && info.specs.length) {
       const list = el('dl', 'spec-list');
@@ -380,17 +384,17 @@
         list.append(el('dt', 'spec-label', s.label));
         list.append(el('dd', 'spec-value', s.value));
       }
-      castPopCard.append(list);
+      body.append(list);
     }
     if (info.p && info.p.intro) {
-      castPopCard.append(el('p', 'profile-intro', info.p.intro));
+      body.append(el('p', 'profile-intro', info.p.intro));
     }
     if (info.x) {
       const x = el('a', 'cast-cta', 'X（旧Twitter）を見る →');
       x.href = info.x;
       x.target = '_blank';
       x.rel = 'noopener';
-      castPopCard.append(x);
+      body.append(x);
     }
     castPop.hidden = false;
     document.body.classList.add('pop-open');
