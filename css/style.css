@@ -352,6 +352,266 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
 }
 body.lightbox-open { overflow: hidden; }
 
+/* ---------- キャスト紹介ポップアップ（日ビューのチップから開く） ----------
+   意匠は bs-cast-finder のプロフィールカード移植。色はテーマ変数へマップ。
+   ランク勢の明朝は CSP（外部フォント禁止）のためシステムフォントスタック */
+@keyframes popCardIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.pop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(8, 7, 12, 0.88); /* ライトボックスと同じスクリム */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 14px;
+  animation: lightboxIn 0.18s ease;
+}
+.pop__card-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: calc(100dvh - 48px);
+  display: flex;
+}
+.pop__close {
+  position: absolute;
+  top: -12px;
+  right: -4px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text-sub);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: var(--shadow);
+}
+body.pop-open { overflow: hidden; }
+
+.profile-card {
+  position: relative;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 20px 26px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: popCardIn 0.22s ease;
+}
+.cast-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 2px solid var(--accent);
+  object-fit: cover;
+  display: block;
+}
+.cast-icon--initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-sub);
+  background: var(--surface-2);
+}
+.cast-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 12px 0 0;
+}
+/* ランク勲章: 月桂樹（laurel.svg を mask で左右に、色はランクグラデ） */
+.rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin: 6px 0 0;
+  letter-spacing: 0.08em;
+  background: linear-gradient(160deg, var(--rank-1), var(--rank-2) 60%, var(--rank-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.rank-badge::before,
+.rank-badge::after {
+  content: "";
+  width: 12px;
+  height: 24px;
+  flex: none;
+  background: linear-gradient(160deg, var(--rank-1), var(--rank-2) 70%, var(--rank-3));
+  -webkit-mask: url("../assets/laurel.svg") no-repeat center / contain;
+  mask: url("../assets/laurel.svg") no-repeat center / contain;
+}
+.rank-badge::after { transform: scaleX(-1); }
+.shift-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--accent-weak);
+  color: var(--ok);
+}
+.match-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.match-tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--accent-weak);
+  color: var(--accent);
+}
+.profile-catch {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.7;
+}
+.btn-primary.app-link {
+  display: block;
+  margin: 18px auto 0;
+  max-width: 280px;
+  padding: 12px 32px;
+  background: var(--grad);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+.btn-primary.app-link:active { transform: scale(0.97); }
+.spec-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 14px 0 0;
+  text-align: left;
+  font-size: 0.85rem;
+}
+.spec-list dd { margin: 0; }
+.spec-label { color: var(--text-sub); font-weight: 700; white-space: nowrap; }
+.spec-value { color: var(--text); }
+.profile-intro {
+  margin: 14px 0 0;
+  line-height: 2;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  text-align: left;
+  white-space: pre-line;
+}
+.cast-cta {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ランク勢: CastRank(showcase) の意匠（額縁・菱形・ウォーターマーク・明朝・ヘアライン） */
+.profile-card.rank-gold   { --rank-1: var(--gold-1);   --rank-2: var(--gold-2);   --rank-3: var(--gold-3); }
+.profile-card.rank-silver { --rank-1: var(--silver-1); --rank-2: var(--silver-2); --rank-3: var(--silver-3); }
+.profile-card.rank-bronze { --rank-1: var(--bronze-1); --rank-2: var(--bronze-2); --rank-3: var(--bronze-3); }
+.profile-card.ranked {
+  border-color: color-mix(in srgb, var(--rank-2) 55%, transparent);
+  padding: 28px 22px;
+}
+.profile-card.ranked > :not(.pr-frame):not(.pr-watermark) { position: relative; }
+.pr-frame {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid color-mix(in srgb, var(--rank-2) 45%, transparent);
+  pointer-events: none;
+}
+.pr-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid color-mix(in srgb, var(--rank-2) 22%, transparent);
+}
+.pr-frame::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  margin-left: -3.5px;
+  width: 7px;
+  height: 7px;
+  background: var(--rank-2);
+  transform: rotate(45deg);
+}
+.pr-watermark {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-weight: 800;
+  font-size: 54px;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--rank-2) 13%, transparent);
+  pointer-events: none;
+}
+.pr-name {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: 0.06em;
+  padding-bottom: 12px;
+}
+.pr-name::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--rank-2) 15%, transparent),
+    var(--rank-2),
+    color-mix(in srgb, var(--rank-2) 15%, transparent));
+}
+.profile-card.ranked .rank-badge {
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  margin-top: 10px;
+}
+.pr-catch {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* ---------- ビュー遷移アニメーション ---------- */
 @keyframes viewIn {
   from { opacity: 0; transform: translateY(12px); }

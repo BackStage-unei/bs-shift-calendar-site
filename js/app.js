@@ -265,7 +265,7 @@
       row.append(el('div', 'sched__time', labels[i]));
       const cell = el('div', 'sched__casts');
       if (slot.n.length) {
-        for (const name of slot.n) cell.append(castChip(name));
+        for (const name of slot.n) cell.append(castChip(name, date));
       } else {
         cell.append(el('span', 'sched__none', '—'));
       }
@@ -295,15 +295,117 @@
     return span;
   }
 
-  /** 日ビュー用チップ（アイコン + 名前、ランク色枠） */
-  function castChip(name) {
+  /** 日ビュー用チップ（アイコン + 名前、ランク色枠）。タップで紹介ポップアップ */
+  function castChip(name, date) {
     const info = castInfo(name);
-    const chip = el('span', 'chip');
+    const chip = el('button', 'chip');
+    chip.type = 'button';
     chip.classList.add(info.r ? `rank-${info.r}` : 'rank-normal');
     chip.append(castFace(name));
     chip.append(el('span', 'chip__name', name));
+    chip.addEventListener('click', () => openCastPopup(name, date));
     return chip;
   }
+
+  // ---------- キャスト紹介ポップアップ ----------
+  const castPop = document.getElementById('castPop');
+  const castPopCard = document.getElementById('castPopCard');
+
+  /**
+   * その日のスロット列から name の出勤レンジ表記を作る（連続スロットを結合）。
+   * 終了時刻は最終スロットの +1時間（例: 23:00 のみ → "23:00〜24:00"、
+   * 0:00〜3:00 連続 → "0:00〜4:00"。スロットは1時間刻み・raw表記が前提）
+   */
+  function shiftRangeLabel(slots, name) {
+    const runs = [];
+    let last = -2;
+    slots.forEach((slot, i) => {
+      if (!slot.n.includes(name)) return;
+      if (i === last + 1) runs[runs.length - 1].end = i;
+      else runs.push({ start: i, end: i });
+      last = i;
+    });
+    return runs.map(({ start, end }) => {
+      const m = /^(\d{1,2}):(\d{2})$/.exec(slots[end].t);
+      const endLabel = m ? `${Number(m[1]) + 1}:${m[2]}` : slots[end].t;
+      return `${slots[start].t}〜${endLabel}`;
+    }).join(' / ');
+  }
+
+  function openCastPopup(name, date) {
+    const info = castInfo(name);
+    const day = dayByDate.get(date);
+    const ranked = !!(info.p && info.r); // ランク意匠はプロフィールがある場合のみ
+    castPopCard.textContent = '';
+    castPopCard.className = 'profile-card'
+      + (info.r ? ` rank-${info.r}` : '')
+      + (ranked ? ' ranked' : '');
+    if (ranked) {
+      castPopCard.append(el('div', 'pr-frame'));
+      castPopCard.append(el('span', 'pr-watermark', info.r.toUpperCase()));
+    }
+    if (info.i) {
+      const img = el('img', 'cast-icon');
+      img.src = info.i;
+      img.alt = name;
+      castPopCard.append(img);
+    } else {
+      castPopCard.append(el('span', 'cast-icon cast-icon--initial', name.slice(0, 1)));
+    }
+    castPopCard.append(el('p', `cast-name${ranked ? ' pr-name' : ''}`, name));
+    if (info.r) {
+      castPopCard.append(el('p', `rank-badge rank-${info.r}`, `${info.r.toUpperCase()} CLASS`));
+    }
+    const ranges = day ? shiftRangeLabel(day.slots, name) : '';
+    if (ranges) castPopCard.append(el('span', 'shift-badge', `この日の出勤 ${ranges}`));
+    if (info.p && info.p.catch) {
+      castPopCard.append(el('p', `profile-catch${ranked ? ' pr-catch' : ''}`, info.p.catch));
+    }
+    if (info.app) {
+      // BackStage アプリのキャストページへの Deeplink（未インストール時はストア）
+      const a = el('a', 'btn-primary app-link', 'アプリで会いにいく');
+      a.href = info.app;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      castPopCard.append(a);
+    }
+    if (info.tags && info.tags.length) {
+      const wrap = el('div', 'match-tags');
+      for (const t of info.tags) wrap.append(el('span', 'match-tag', t));
+      castPopCard.append(wrap);
+    }
+    if (info.specs && info.specs.length) {
+      const list = el('dl', 'spec-list');
+      for (const s of info.specs) {
+        list.append(el('dt', 'spec-label', s.label));
+        list.append(el('dd', 'spec-value', s.value));
+      }
+      castPopCard.append(list);
+    }
+    if (info.p && info.p.intro) {
+      castPopCard.append(el('p', 'profile-intro', info.p.intro));
+    }
+    if (info.x) {
+      const x = el('a', 'cast-cta', 'X（旧Twitter）を見る →');
+      x.href = info.x;
+      x.target = '_blank';
+      x.rel = 'noopener';
+      castPopCard.append(x);
+    }
+    castPop.hidden = false;
+    document.body.classList.add('pop-open');
+    castPopCard.scrollTop = 0;
+  }
+
+  function closeCastPopup() {
+    castPop.hidden = true;
+    document.body.classList.remove('pop-open');
+  }
+
+  castPop.addEventListener('click', (e) => {
+    if (e.target === castPop) closeCastPopup();
+  });
+  document.getElementById('castPopClose').addEventListener('click', closeCastPopup);
 
   // ---------- ライトボックス（画像の拡大表示） ----------
   const lightbox = document.getElementById('lightbox');
@@ -325,7 +427,9 @@
   });
   lightbox.addEventListener('click', closeLightbox);
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    if (e.key !== 'Escape') return;
+    if (!lightbox.hidden) closeLightbox();
+    else if (!castPop.hidden) closeCastPopup();
   });
 
   // ---------- 起動 ----------

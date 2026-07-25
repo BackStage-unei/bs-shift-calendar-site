@@ -59,6 +59,14 @@
     <img id="lightboxImg" alt="シフト画像の拡大表示" />
   </button>
 
+  <!-- キャスト紹介ポップアップ（日ビューのチップから開く。中身は app.js が el() で描画） -->
+  <div id="castPop" class="pop" hidden>
+    <div class="pop__card-wrap">
+      <button type="button" class="pop__close" id="castPopClose" aria-label="閉じる">✕</button>
+      <div class="profile-card" id="castPopCard"></div>
+    </div>
+  </div>
+
   <script src="shift-data.js"></script>
   <script src="js/common.js"></script>
   <script src="js/app.js"></script>

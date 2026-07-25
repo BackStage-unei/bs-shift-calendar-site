@@ -37,4 +37,12 @@
   --normal-text: #f5f3f7;
 
   --chip-bg: #16141f;
+
+  /* キャスト紹介ポップアップ用（cast-finder の意匠移植で使う値） */
+  --accent-weak: rgba(201, 154, 255, 0.14);
+  --ok: #4ade80;                 /* 出勤バッジの文字色 */
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  --gold-1: #f8e8b0;   --gold-2: #f0c530;   --gold-3: #9a6b06;
+  --silver-1: #f1f5f9; --silver-2: #cbd5e1; --silver-3: #64748b;
+  --bronze-1: #f3c9a0; --bronze-2: #d08a4e; --bronze-3: #7c4a1e;
 }
