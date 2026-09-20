@@ -1,0 +1,669 @@
+{
+ "casts": [
+  {
+   "name": "7_ko",
+   "rank": "bronze",
+   "icon": "assets/icons/c046.webp"
+  },
+  {
+   "name": "MUZU",
+   "rank": "",
+   "icon": "assets/icons/c108.webp"
+  },
+  {
+   "name": "anna🍒⋆꙳",
+   "rank": "",
+   "icon": "assets/icons/c148.webp"
+  },
+  {
+   "name": "youri",
+   "rank": "",
+   "icon": "assets/icons/c130.webp"
+  },
+  {
+   "name": "あまち",
+   "rank": "bronze",
+   "icon": "assets/icons/c001.webp"
+  },
+  {
+   "name": "あまタクシー",
+   "rank": "bronze",
+   "icon": "assets/icons/c066.webp"
+  },
+  {
+   "name": "おめがまる",
+   "rank": "",
+   "icon": "assets/icons/c025.webp"
+  },
+  {
+   "name": "かずさ",
+   "rank": "",
+   "icon": "assets/icons/c047.webp"
+  },
+  {
+   "name": "こぐまもる",
+   "rank": "silver",
+   "icon": "assets/icons/c030.webp"
+  },
+  {
+   "name": "ながいキリン",
+   "rank": "",
+   "icon": "assets/icons/c103.webp"
+  },
+  {
+   "name": "にこ",
+   "rank": "bronze",
+   "icon": "assets/icons/c037.webp"
+  },
+  {
+   "name": "はちみつ",
+   "rank": "",
+   "icon": "assets/icons/c051.webp"
+  },
+  {
+   "name": "ひよっ子 みう",
+   "rank": "",
+   "icon": "assets/icons/c056.webp"
+  },
+  {
+   "name": "ぽこみんと",
+   "rank": "",
+   "icon": "assets/icons/c012.webp"
+  },
+  {
+   "name": "まいくま",
+   "rank": "",
+   "icon": "assets/icons/c092.webp"
+  },
+  {
+   "name": "みーこ",
+   "rank": "",
+   "icon": "assets/icons/c079.webp"
+  },
+  {
+   "name": "めぐるん",
+   "rank": "",
+   "icon": "assets/icons/c031.webp"
+  },
+  {
+   "name": "やっこ",
+   "rank": "",
+   "icon": "assets/icons/c131.webp"
+  },
+  {
+   "name": "やまき",
+   "rank": "",
+   "icon": "assets/icons/c069.webp"
+  },
+  {
+   "name": "ゆあ",
+   "rank": "",
+   "icon": "assets/icons/c121.webp"
+  },
+  {
+   "name": "ゆうり",
+   "rank": "",
+   "icon": "assets/icons/c099.webp"
+  },
+  {
+   "name": "ろん",
+   "rank": "",
+   "icon": "assets/icons/c143.webp"
+  },
+  {
+   "name": "わたあめ",
+   "rank": "",
+   "icon": "assets/icons/c100.webp"
+  },
+  {
+   "name": "わなびもち",
+   "rank": "",
+   "icon": "assets/icons/c052.webp"
+  },
+  {
+   "name": "ウロ∞🤍",
+   "rank": "",
+   "icon": "assets/icons/c135.webp"
+  },
+  {
+   "name": "オイエ・ナイスガイ",
+   "rank": "",
+   "icon": "assets/icons/c027.webp"
+  },
+  {
+   "name": "サヤ・グレース",
+   "rank": "bronze",
+   "icon": "assets/icons/c023.webp"
+  },
+  {
+   "name": "シン・クラーク",
+   "rank": "",
+   "icon": "assets/icons/c104.webp"
+  },
+  {
+   "name": "スイ・カウハ",
+   "rank": "",
+   "icon": "assets/icons/c111.webp"
+  },
+  {
+   "name": "ヒロト・ユイ",
+   "rank": "",
+   "icon": "assets/icons/c084.webp"
+  },
+  {
+   "name": "ブルーローズアイス",
+   "rank": "",
+   "icon": "assets/icons/c105.webp"
+  },
+  {
+   "name": "プルミエール・エトワール",
+   "rank": "",
+   "icon": "assets/icons/c009.webp"
+  },
+  {
+   "name": "マコ",
+   "rank": "",
+   "icon": "assets/icons/c122.webp"
+  },
+  {
+   "name": "マロン",
+   "rank": "",
+   "icon": "assets/icons/c139.webp"
+  },
+  {
+   "name": "ミラ・エトワール",
+   "rank": "bronze",
+   "icon": "assets/icons/c068.webp"
+  },
+  {
+   "name": "ライラ",
+   "rank": "",
+   "icon": "assets/icons/c049.webp"
+  },
+  {
+   "name": "ルカ・ミント",
+   "rank": "",
+   "icon": "assets/icons/c114.webp"
+  },
+  {
+   "name": "ルツ",
+   "rank": "",
+   "icon": "assets/icons/c129.webp"
+  },
+  {
+   "name": "ルティ",
+   "rank": "",
+   "icon": "assets/icons/c126.webp"
+  },
+  {
+   "name": "三毒ローパ",
+   "rank": "bronze",
+   "icon": "assets/icons/c006.webp"
+  },
+  {
+   "name": "九木ヨタカ💡",
+   "rank": "",
+   "icon": "assets/icons/c125.webp"
+  },
+  {
+   "name": "六華ミル",
+   "rank": "",
+   "icon": "assets/icons/c020.webp"
+  },
+  {
+   "name": "冬月　シオン",
+   "rank": "",
+   "icon": "assets/icons/c097.webp"
+  },
+  {
+   "name": "凛堂すずか",
+   "rank": "",
+   "icon": "assets/icons/c093.webp"
+  },
+  {
+   "name": "千灯こん⋆͛💛",
+   "rank": "",
+   "icon": "assets/icons/c107.webp"
+  },
+  {
+   "name": "千里香",
+   "rank": "",
+   "icon": "assets/icons/c033.webp"
+  },
+  {
+   "name": "君の嫁",
+   "rank": "",
+   "icon": "assets/icons/c035.webp"
+  },
+  {
+   "name": "呑田くれい",
+   "rank": "",
+   "icon": "assets/icons/c094.webp"
+  },
+  {
+   "name": "園曽える",
+   "rank": "",
+   "icon": "assets/icons/c038.webp"
+  },
+  {
+   "name": "堀落ライ",
+   "rank": "",
+   "icon": "assets/icons/c123.webp"
+  },
+  {
+   "name": "境内リカ",
+   "rank": "bronze",
+   "icon": "assets/icons/c036.webp"
+  },
+  {
+   "name": "夜狩うる",
+   "rank": "bronze",
+   "icon": "assets/icons/c096.webp"
+  },
+  {
+   "name": "夢野てう",
+   "rank": "bronze",
+   "icon": "assets/icons/c028.webp"
+  },
+  {
+   "name": "天使いちご",
+   "rank": "",
+   "icon": "assets/icons/c095.webp"
+  },
+  {
+   "name": "天使める",
+   "rank": "",
+   "icon": "assets/icons/c147.webp"
+  },
+  {
+   "name": "天使らおん",
+   "rank": "",
+   "icon": "assets/icons/c064.webp"
+  },
+  {
+   "name": "天羽るぅあ",
+   "rank": "",
+   "icon": "assets/icons/c115.webp"
+  },
+  {
+   "name": "天藍",
+   "rank": "",
+   "icon": "assets/icons/c134.webp"
+  },
+  {
+   "name": "奈夢夛",
+   "rank": "",
+   "icon": "assets/icons/c081.webp"
+  },
+  {
+   "name": "奏音みゆき",
+   "rank": "",
+   "icon": "assets/icons/c127.webp"
+  },
+  {
+   "name": "如月シノ",
+   "rank": "",
+   "icon": "assets/icons/c022.webp"
+  },
+  {
+   "name": "宇田わん",
+   "rank": "silver",
+   "icon": "assets/icons/c016.webp"
+  },
+  {
+   "name": "寝猫なな",
+   "rank": "bronze",
+   "icon": "assets/icons/c072.webp"
+  },
+  {
+   "name": "小向なのか",
+   "rank": "bronze",
+   "icon": "assets/icons/c029.webp"
+  },
+  {
+   "name": "山岸紫苑",
+   "rank": "",
+   "icon": "assets/icons/c083.webp"
+  },
+  {
+   "name": "影近ゼル",
+   "rank": "",
+   "icon": "assets/icons/c054.webp"
+  },
+  {
+   "name": "微々",
+   "rank": "silver",
+   "icon": "assets/icons/c112.webp"
+  },
+  {
+   "name": "恋糸 りせ",
+   "rank": "",
+   "icon": "assets/icons/c149.webp"
+  },
+  {
+   "name": "愛祈はあと",
+   "rank": "",
+   "icon": "assets/icons/c138.webp"
+  },
+  {
+   "name": "旅乃とき",
+   "rank": "bronze",
+   "icon": "assets/icons/c086.webp"
+  },
+  {
+   "name": "早乙女・Money・潤",
+   "rank": "",
+   "icon": "assets/icons/c141.webp"
+  },
+  {
+   "name": "星宮きらら",
+   "rank": "",
+   "icon": "assets/icons/c102.webp"
+  },
+  {
+   "name": "春原なずな",
+   "rank": "",
+   "icon": "assets/icons/c065.webp"
+  },
+  {
+   "name": "月白めろあ",
+   "rank": "",
+   "icon": "assets/icons/c113.webp"
+  },
+  {
+   "name": "月詠くるみ",
+   "rank": "",
+   "icon": "assets/icons/c085.webp"
+  },
+  {
+   "name": "朱音 茶々",
+   "rank": "",
+   "icon": "assets/icons/c117.webp"
+  },
+  {
+   "name": "杏乃　なぎ",
+   "rank": "",
+   "icon": "assets/icons/c137.webp"
+  },
+  {
+   "name": "松本・高橋・メノウ",
+   "rank": "",
+   "icon": "assets/icons/c058.webp"
+  },
+  {
+   "name": "枢木とわ",
+   "rank": "",
+   "icon": "assets/icons/c073.webp"
+  },
+  {
+   "name": "桃護りんね",
+   "rank": "",
+   "icon": "assets/icons/c120.webp"
+  },
+  {
+   "name": "桜咲はるね",
+   "rank": "bronze",
+   "icon": "assets/icons/c032.webp"
+  },
+  {
+   "name": "水戸わかな",
+   "rank": "silver",
+   "icon": "assets/icons/c008.webp"
+  },
+  {
+   "name": "水森ねむり",
+   "rank": "bronze",
+   "icon": "assets/icons/c063.webp"
+  },
+  {
+   "name": "水瀬陽斗",
+   "rank": "",
+   "icon": "assets/icons/c106.webp"
+  },
+  {
+   "name": "水野ゆか",
+   "rank": "bronze",
+   "icon": "assets/icons/c017.webp"
+  },
+  {
+   "name": "水鏡なごみ",
+   "rank": "",
+   "icon": "assets/icons/c116.webp"
+  },
+  {
+   "name": "沙耶",
+   "rank": "",
+   "icon": "assets/icons/c040.webp"
+  },
+  {
+   "name": "海鈴なぎ",
+   "rank": "",
+   "icon": "assets/icons/c087.webp"
+  },
+  {
+   "name": "灰姫本能",
+   "rank": "",
+   "icon": "assets/icons/c004.webp"
+  },
+  {
+   "name": "焦赤緋色",
+   "rank": "",
+   "icon": "assets/icons/c015.webp"
+  },
+  {
+   "name": "熊手 紗",
+   "rank": "",
+   "icon": "assets/icons/c124.webp"
+  },
+  {
+   "name": "狼尾ちや",
+   "rank": "",
+   "icon": "assets/icons/c145.webp"
+  },
+  {
+   "name": "猫夢ねむ",
+   "rank": "",
+   "icon": "assets/icons/c060.webp"
+  },
+  {
+   "name": "玉木瑶",
+   "rank": "silver",
+   "icon": "assets/icons/c010.webp"
+  },
+  {
+   "name": "琴葉",
+   "rank": "",
+   "icon": "assets/icons/c007.webp"
+  },
+  {
+   "name": "田中 良典",
+   "rank": "",
+   "icon": ""
+  },
+  {
+   "name": "白浪しおん",
+   "rank": "",
+   "icon": "assets/icons/c018.webp"
+  },
+  {
+   "name": "白猫にゃる",
+   "rank": "bronze",
+   "icon": "assets/icons/c077.webp"
+  },
+  {
+   "name": "白霧のえ",
+   "rank": "",
+   "icon": "assets/icons/c101.webp"
+  },
+  {
+   "name": "目黒れる",
+   "rank": "",
+   "icon": "assets/icons/c050.webp"
+  },
+  {
+   "name": "真白ひなた",
+   "rank": "bronze",
+   "icon": "assets/icons/c003.webp"
+  },
+  {
+   "name": "砂藤うゆ",
+   "rank": "",
+   "icon": "assets/icons/c080.webp"
+  },
+  {
+   "name": "秋乃夜長",
+   "rank": "",
+   "icon": "assets/icons/c119.webp"
+  },
+  {
+   "name": "空乃まる",
+   "rank": "",
+   "icon": "assets/icons/c133.webp"
+  },
+  {
+   "name": "立花つむぎ",
+   "rank": "",
+   "icon": "assets/icons/c146.webp"
+  },
+  {
+   "name": "笑空虹心",
+   "rank": "",
+   "icon": "assets/icons/c142.webp"
+  },
+  {
+   "name": "糸落めろち",
+   "rank": "",
+   "icon": "assets/icons/c144.webp"
+  },
+  {
+   "name": "紗衣",
+   "rank": "",
+   "icon": "assets/icons/c059.webp"
+  },
+  {
+   "name": "紫月 ほたる",
+   "rank": "bronze",
+   "icon": "assets/icons/c090.webp"
+  },
+  {
+   "name": "結愛",
+   "rank": "",
+   "icon": "assets/icons/c118.webp"
+  },
+  {
+   "name": "綿愛芽 ふぃ",
+   "rank": "",
+   "icon": "assets/icons/c071.webp"
+  },
+  {
+   "name": "緑牙巳",
+   "rank": "",
+   "icon": "assets/icons/c041.webp"
+  },
+  {
+   "name": "縁",
+   "rank": "",
+   "icon": "assets/icons/c075.webp"
+  },
+  {
+   "name": "胡桃沢 くるみ",
+   "rank": "",
+   "icon": "assets/icons/c110.webp"
+  },
+  {
+   "name": "莉愛ふあ",
+   "rank": "",
+   "icon": "assets/icons/c078.webp"
+  },
+  {
+   "name": "蒼羽れいな",
+   "rank": "",
+   "icon": "assets/icons/c074.webp"
+  },
+  {
+   "name": "蔦ヰ田リウ",
+   "rank": "silver",
+   "icon": "assets/icons/c034.webp"
+  },
+  {
+   "name": "西那てまり",
+   "rank": "",
+   "icon": "assets/icons/c088.webp"
+  },
+  {
+   "name": "言乃葩 和",
+   "rank": "",
+   "icon": "assets/icons/c062.webp"
+  },
+  {
+   "name": "赤絲 こゆび",
+   "rank": "silver",
+   "icon": "assets/icons/c076.webp"
+  },
+  {
+   "name": "超絶はおちー",
+   "rank": "bronze",
+   "icon": ""
+  },
+  {
+   "name": "迷鏡 すやぁ",
+   "rank": "",
+   "icon": "assets/icons/c132.webp"
+  },
+  {
+   "name": "金江はるか",
+   "rank": "",
+   "icon": "assets/icons/c091.webp"
+  },
+  {
+   "name": "陽日葵 黄実",
+   "rank": "",
+   "icon": "assets/icons/c089.webp"
+  },
+  {
+   "name": "陽紬ひなた",
+   "rank": "",
+   "icon": "assets/icons/c039.webp"
+  },
+  {
+   "name": "雪織みみ",
+   "rank": "",
+   "icon": "assets/icons/c109.webp"
+  },
+  {
+   "name": "鬱ノ宮シアン",
+   "rank": "",
+   "icon": "assets/icons/c067.webp"
+  },
+  {
+   "name": "魔桜エナ",
+   "rank": "",
+   "icon": "assets/icons/c026.webp"
+  },
+  {
+   "name": "魔法少女ぴょん",
+   "rank": "bronze",
+   "icon": "assets/icons/c021.webp"
+  },
+  {
+   "name": "鹿鳴りあ",
+   "rank": "gold",
+   "icon": "assets/icons/c002.webp"
+  },
+  {
+   "name": "黒川水晶",
+   "rank": "",
+   "icon": "assets/icons/c045.webp"
+  },
+  {
+   "name": "黒柴えいら",
+   "rank": "bronze",
+   "icon": "assets/icons/c019.webp"
+  },
+  {
+   "name": "黝薔くろ",
+   "rank": "",
+   "icon": "assets/icons/c005.webp"
+  }
+ ]
+}
