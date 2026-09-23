@@ -6,6 +6,11 @@
    "icon": "assets/icons/c046.webp"
   },
   {
+   "name": "EdeN",
+   "rank": "",
+   "icon": "assets/icons/c154.webp"
+  },
+  {
    "name": "MUZU",
    "rank": "",
    "icon": "assets/icons/c108.webp"
@@ -321,6 +326,11 @@
    "icon": "assets/icons/c029.webp"
   },
   {
+   "name": "小鞠 るな",
+   "rank": "",
+   "icon": "assets/icons/c157.webp"
+  },
+  {
    "name": "山岸紫苑",
    "rank": "",
    "icon": "assets/icons/c083.webp"
@@ -376,6 +386,11 @@
    "icon": "assets/icons/c085.webp"
   },
   {
+   "name": "木間エラ",
+   "rank": "",
+   "icon": "assets/icons/c158.webp"
+  },
+  {
    "name": "朱音 茶々",
    "rank": "",
    "icon": "assets/icons/c117.webp"
@@ -404,6 +419,11 @@
    "name": "桜咲はるね",
    "rank": "bronze",
    "icon": "assets/icons/c032.webp"
+  },
+  {
+   "name": "桜部 ふうり",
+   "rank": "",
+   "icon": "assets/icons/c159.webp"
   },
   {
    "name": "水戸わかな",
@@ -516,6 +536,11 @@
    "icon": "assets/icons/c119.webp"
   },
   {
+   "name": "秋兎",
+   "rank": "",
+   "icon": "assets/icons/c156.webp"
+  },
+  {
    "name": "空乃まる",
    "rank": "",
    "icon": "assets/icons/c133.webp"
@@ -534,6 +559,11 @@
    "name": "糸落めろち",
    "rank": "",
    "icon": "assets/icons/c144.webp"
+  },
+  {
+   "name": "紗友里-Sayuri-",
+   "rank": "",
+   "icon": "assets/icons/c152.webp"
   },
   {
    "name": "紗衣",
@@ -566,6 +596,11 @@
    "icon": "assets/icons/c075.webp"
   },
   {
+   "name": "織",
+   "rank": "",
+   "icon": "assets/icons/c155.webp"
+  },
+  {
    "name": "胡桃沢 くるみ",
    "rank": "",
    "icon": "assets/icons/c110.webp"
@@ -574,6 +609,11 @@
    "name": "莉愛ふあ",
    "rank": "",
    "icon": "assets/icons/c078.webp"
+  },
+  {
+   "name": "葵 海亜",
+   "rank": "",
+   "icon": "assets/icons/c153.webp"
   },
   {
    "name": "蒼羽れいな",
@@ -603,12 +643,17 @@
   {
    "name": "超絶はおちー",
    "rank": "bronze",
-   "icon": ""
+   "icon": "assets/icons/c150.webp"
   },
   {
    "name": "迷鏡 すやぁ",
    "rank": "",
    "icon": "assets/icons/c132.webp"
+  },
+  {
+   "name": "郵便めぇる",
+   "rank": "",
+   "icon": "assets/icons/c151.webp"
   },
   {
    "name": "金江はるか",
