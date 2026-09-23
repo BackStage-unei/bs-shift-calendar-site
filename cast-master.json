@@ -3,712 +3,860 @@
   {
    "name": "7_ko",
    "rank": "bronze",
-   "icon": "assets/icons/c046.webp"
+   "icon": "assets/icons/c046.webp",
+   "app_id": 446
   },
   {
    "name": "EdeN",
    "rank": "",
-   "icon": "assets/icons/c154.webp"
+   "icon": "assets/icons/c154.webp",
+   "app_id": 704
   },
   {
    "name": "MUZU",
    "rank": "",
-   "icon": "assets/icons/c108.webp"
+   "icon": "assets/icons/c108.webp",
+   "app_id": 541
   },
   {
    "name": "anna🍒⋆꙳",
    "rank": "",
-   "icon": "assets/icons/c148.webp"
+   "icon": "assets/icons/c148.webp",
+   "app_id": 700
   },
   {
    "name": "youri",
    "rank": "",
-   "icon": "assets/icons/c130.webp"
+   "icon": "assets/icons/c130.webp",
+   "app_id": 630
   },
   {
    "name": "あまち",
    "rank": "bronze",
-   "icon": "assets/icons/c001.webp"
+   "icon": "assets/icons/c001.webp",
+   "app_id": 154
   },
   {
    "name": "あまタクシー",
    "rank": "bronze",
-   "icon": "assets/icons/c066.webp"
+   "icon": "assets/icons/c066.webp",
+   "app_id": 501
   },
   {
    "name": "おめがまる",
    "rank": "",
-   "icon": "assets/icons/c025.webp"
+   "icon": "assets/icons/c025.webp",
+   "app_id": 373
   },
   {
    "name": "かずさ",
    "rank": "",
-   "icon": "assets/icons/c047.webp"
+   "icon": "assets/icons/c047.webp",
+   "app_id": 448
   },
   {
    "name": "こぐまもる",
    "rank": "silver",
-   "icon": "assets/icons/c030.webp"
+   "icon": "assets/icons/c030.webp",
+   "app_id": 392
   },
   {
    "name": "ながいキリン",
    "rank": "",
-   "icon": "assets/icons/c103.webp"
+   "icon": "assets/icons/c103.webp",
+   "app_id": 605
   },
   {
    "name": "にこ",
    "rank": "bronze",
-   "icon": "assets/icons/c037.webp"
+   "icon": "assets/icons/c037.webp",
+   "app_id": 416
   },
   {
    "name": "はちみつ",
    "rank": "",
-   "icon": "assets/icons/c051.webp"
+   "icon": "assets/icons/c051.webp",
+   "app_id": 462
   },
   {
    "name": "ひよっ子 みう",
    "rank": "",
-   "icon": "assets/icons/c056.webp"
+   "icon": "assets/icons/c056.webp",
+   "app_id": 471
   },
   {
    "name": "ぽこみんと",
    "rank": "",
-   "icon": "assets/icons/c012.webp"
+   "icon": "assets/icons/c012.webp",
+   "app_id": 245
   },
   {
    "name": "まいくま",
    "rank": "",
-   "icon": "assets/icons/c092.webp"
+   "icon": "assets/icons/c092.webp",
+   "app_id": 583
   },
   {
    "name": "みーこ",
    "rank": "",
-   "icon": "assets/icons/c079.webp"
+   "icon": "assets/icons/c079.webp",
+   "app_id": 546
   },
   {
    "name": "めぐるん",
    "rank": "",
-   "icon": "assets/icons/c031.webp"
+   "icon": "assets/icons/c031.webp",
+   "app_id": 394
   },
   {
    "name": "やっこ",
    "rank": "",
-   "icon": "assets/icons/c131.webp"
+   "icon": "assets/icons/c131.webp",
+   "app_id": 673
   },
   {
    "name": "やまき",
    "rank": "",
-   "icon": "assets/icons/c069.webp"
+   "icon": "assets/icons/c069.webp",
+   "app_id": 510
   },
   {
    "name": "ゆあ",
    "rank": "",
-   "icon": "assets/icons/c121.webp"
+   "icon": "assets/icons/c121.webp",
+   "app_id": 566
   },
   {
    "name": "ゆうり",
    "rank": "",
-   "icon": "assets/icons/c099.webp"
+   "icon": "assets/icons/c099.webp",
+   "app_id": 592
   },
   {
    "name": "ろん",
    "rank": "",
-   "icon": "assets/icons/c143.webp"
+   "icon": "assets/icons/c143.webp",
+   "app_id": 590
   },
   {
    "name": "わたあめ",
    "rank": "",
-   "icon": "assets/icons/c100.webp"
+   "icon": "assets/icons/c100.webp",
+   "app_id": 596
   },
   {
    "name": "わなびもち",
    "rank": "",
-   "icon": "assets/icons/c052.webp"
+   "icon": "assets/icons/c052.webp",
+   "app_id": 464
   },
   {
    "name": "ウロ∞🤍",
    "rank": "",
-   "icon": "assets/icons/c135.webp"
+   "icon": "assets/icons/c135.webp",
+   "app_id": 660
   },
   {
    "name": "オイエ・ナイスガイ",
    "rank": "",
-   "icon": "assets/icons/c027.webp"
+   "icon": "assets/icons/c027.webp",
+   "app_id": 385
   },
   {
    "name": "サヤ・グレース",
    "rank": "bronze",
-   "icon": "assets/icons/c023.webp"
+   "icon": "assets/icons/c023.webp",
+   "app_id": 328
   },
   {
    "name": "シン・クラーク",
    "rank": "",
-   "icon": "assets/icons/c104.webp"
+   "icon": "assets/icons/c104.webp",
+   "app_id": 612
   },
   {
    "name": "スイ・カウハ",
    "rank": "",
-   "icon": "assets/icons/c111.webp"
+   "icon": "assets/icons/c111.webp",
+   "app_id": 604
   },
   {
    "name": "ヒロト・ユイ",
    "rank": "",
-   "icon": "assets/icons/c084.webp"
+   "icon": "assets/icons/c084.webp",
+   "app_id": 559
   },
   {
    "name": "ブルーローズアイス",
    "rank": "",
-   "icon": "assets/icons/c105.webp"
+   "icon": "assets/icons/c105.webp",
+   "app_id": 621
   },
   {
    "name": "プルミエール・エトワール",
    "rank": "",
-   "icon": "assets/icons/c009.webp"
+   "icon": "assets/icons/c009.webp",
+   "app_id": 234
   },
   {
    "name": "マコ",
    "rank": "",
-   "icon": "assets/icons/c122.webp"
+   "icon": "assets/icons/c122.webp",
+   "app_id": 595
   },
   {
    "name": "マロン",
    "rank": "",
-   "icon": "assets/icons/c139.webp"
+   "icon": "assets/icons/c139.webp",
+   "app_id": 683
   },
   {
    "name": "ミラ・エトワール",
    "rank": "bronze",
-   "icon": "assets/icons/c068.webp"
+   "icon": "assets/icons/c068.webp",
+   "app_id": 506
   },
   {
    "name": "ライラ",
    "rank": "",
-   "icon": "assets/icons/c049.webp"
+   "icon": "assets/icons/c049.webp",
+   "app_id": 454
   },
   {
    "name": "ルカ・ミント",
    "rank": "",
-   "icon": "assets/icons/c114.webp"
+   "icon": "assets/icons/c114.webp",
+   "app_id": 622
   },
   {
    "name": "ルツ",
    "rank": "",
-   "icon": "assets/icons/c129.webp"
+   "icon": "assets/icons/c129.webp",
+   "app_id": 611
   },
   {
    "name": "ルティ",
    "rank": "",
-   "icon": "assets/icons/c126.webp"
+   "icon": "assets/icons/c126.webp",
+   "app_id": 637
   },
   {
    "name": "三毒ローパ",
    "rank": "bronze",
-   "icon": "assets/icons/c006.webp"
+   "icon": "assets/icons/c006.webp",
+   "app_id": 205
   },
   {
    "name": "九木ヨタカ💡",
    "rank": "",
-   "icon": "assets/icons/c125.webp"
+   "icon": "assets/icons/c125.webp",
+   "app_id": 633
   },
   {
    "name": "六華ミル",
    "rank": "",
-   "icon": "assets/icons/c020.webp"
+   "icon": "assets/icons/c020.webp",
+   "app_id": 318
   },
   {
    "name": "冬月　シオン",
    "rank": "",
-   "icon": "assets/icons/c097.webp"
+   "icon": "assets/icons/c097.webp",
+   "app_id": 589
   },
   {
    "name": "凛堂すずか",
    "rank": "",
-   "icon": "assets/icons/c093.webp"
+   "icon": "assets/icons/c093.webp",
+   "app_id": 585
   },
   {
    "name": "千灯こん⋆͛💛",
    "rank": "",
-   "icon": "assets/icons/c107.webp"
+   "icon": "assets/icons/c107.webp",
+   "app_id": 539
   },
   {
    "name": "千里香",
    "rank": "",
-   "icon": "assets/icons/c033.webp"
+   "icon": "assets/icons/c033.webp",
+   "app_id": 403
   },
   {
    "name": "君の嫁",
    "rank": "",
-   "icon": "assets/icons/c035.webp"
+   "icon": "assets/icons/c035.webp",
+   "app_id": 413
   },
   {
    "name": "呑田くれい",
    "rank": "",
-   "icon": "assets/icons/c094.webp"
+   "icon": "assets/icons/c094.webp",
+   "app_id": 586
   },
   {
    "name": "園曽える",
    "rank": "",
-   "icon": "assets/icons/c038.webp"
+   "icon": "assets/icons/c038.webp",
+   "app_id": 420
   },
   {
    "name": "堀落ライ",
    "rank": "",
-   "icon": "assets/icons/c123.webp"
+   "icon": "assets/icons/c123.webp",
+   "app_id": 628
   },
   {
    "name": "境内リカ",
    "rank": "bronze",
-   "icon": "assets/icons/c036.webp"
+   "icon": "assets/icons/c036.webp",
+   "app_id": 414
   },
   {
    "name": "夜狩うる",
    "rank": "bronze",
-   "icon": "assets/icons/c096.webp"
+   "icon": "assets/icons/c096.webp",
+   "app_id": 588
   },
   {
    "name": "夢野てう",
    "rank": "bronze",
-   "icon": "assets/icons/c028.webp"
+   "icon": "assets/icons/c028.webp",
+   "app_id": 388
   },
   {
    "name": "天使いちご",
    "rank": "",
-   "icon": "assets/icons/c095.webp"
+   "icon": "assets/icons/c095.webp",
+   "app_id": 587
   },
   {
    "name": "天使める",
    "rank": "",
-   "icon": "assets/icons/c147.webp"
+   "icon": "assets/icons/c147.webp",
+   "app_id": 684
   },
   {
    "name": "天使らおん",
    "rank": "",
-   "icon": "assets/icons/c064.webp"
+   "icon": "assets/icons/c064.webp",
+   "app_id": 499
   },
   {
    "name": "天羽るぅあ",
    "rank": "",
-   "icon": "assets/icons/c115.webp"
+   "icon": "assets/icons/c115.webp",
+   "app_id": 563
   },
   {
    "name": "天藍",
    "rank": "",
-   "icon": "assets/icons/c134.webp"
+   "icon": "assets/icons/c134.webp",
+   "app_id": 659
   },
   {
    "name": "奈夢夛",
    "rank": "",
-   "icon": "assets/icons/c081.webp"
+   "icon": "assets/icons/c081.webp",
+   "app_id": 553
   },
   {
    "name": "奏音みゆき",
    "rank": "",
-   "icon": "assets/icons/c127.webp"
+   "icon": "assets/icons/c127.webp",
+   "app_id": 649
   },
   {
    "name": "如月シノ",
    "rank": "",
-   "icon": "assets/icons/c022.webp"
+   "icon": "assets/icons/c022.webp",
+   "app_id": 322
   },
   {
    "name": "宇田わん",
    "rank": "silver",
-   "icon": "assets/icons/c016.webp"
+   "icon": "assets/icons/c016.webp",
+   "app_id": 296
   },
   {
    "name": "寝猫なな",
    "rank": "bronze",
-   "icon": "assets/icons/c072.webp"
+   "icon": "assets/icons/c072.webp",
+   "app_id": 514
   },
   {
    "name": "小向なのか",
    "rank": "bronze",
-   "icon": "assets/icons/c029.webp"
+   "icon": "assets/icons/c029.webp",
+   "app_id": 391
   },
   {
    "name": "小鞠 るな",
    "rank": "",
-   "icon": "assets/icons/c157.webp"
+   "icon": "assets/icons/c157.webp",
+   "app_id": 722
   },
   {
    "name": "山岸紫苑",
    "rank": "",
-   "icon": "assets/icons/c083.webp"
+   "icon": "assets/icons/c083.webp",
+   "app_id": 558
   },
   {
    "name": "影近ゼル",
    "rank": "",
-   "icon": "assets/icons/c054.webp"
+   "icon": "assets/icons/c054.webp",
+   "app_id": 469
   },
   {
    "name": "微々",
    "rank": "silver",
-   "icon": "assets/icons/c112.webp"
+   "icon": "assets/icons/c112.webp",
+   "app_id": 616
   },
   {
    "name": "恋糸 りせ",
    "rank": "",
-   "icon": "assets/icons/c149.webp"
+   "icon": "assets/icons/c149.webp",
+   "app_id": 711
   },
   {
    "name": "愛祈はあと",
    "rank": "",
-   "icon": "assets/icons/c138.webp"
+   "icon": "assets/icons/c138.webp",
+   "app_id": 677
   },
   {
    "name": "旅乃とき",
    "rank": "bronze",
-   "icon": "assets/icons/c086.webp"
+   "icon": "assets/icons/c086.webp",
+   "app_id": 565
   },
   {
    "name": "早乙女・Money・潤",
    "rank": "",
-   "icon": "assets/icons/c141.webp"
+   "icon": "assets/icons/c141.webp",
+   "app_id": 701
   },
   {
    "name": "星宮きらら",
    "rank": "",
-   "icon": "assets/icons/c102.webp"
+   "icon": "assets/icons/c102.webp",
+   "app_id": 602
   },
   {
    "name": "春原なずな",
    "rank": "",
-   "icon": "assets/icons/c065.webp"
+   "icon": "assets/icons/c065.webp",
+   "app_id": 500
   },
   {
    "name": "月白めろあ",
    "rank": "",
-   "icon": "assets/icons/c113.webp"
+   "icon": "assets/icons/c113.webp",
+   "app_id": 620
   },
   {
    "name": "月詠くるみ",
    "rank": "",
-   "icon": "assets/icons/c085.webp"
+   "icon": "assets/icons/c085.webp",
+   "app_id": 560
   },
   {
    "name": "木間エラ",
    "rank": "",
-   "icon": "assets/icons/c158.webp"
+   "icon": "assets/icons/c158.webp",
+   "app_id": 729
   },
   {
    "name": "朱音 茶々",
    "rank": "",
-   "icon": "assets/icons/c117.webp"
+   "icon": "assets/icons/c117.webp",
+   "app_id": 607
   },
   {
    "name": "杏乃　なぎ",
    "rank": "",
-   "icon": "assets/icons/c137.webp"
+   "icon": "assets/icons/c137.webp",
+   "app_id": 672
   },
   {
    "name": "松本・高橋・メノウ",
    "rank": "",
-   "icon": "assets/icons/c058.webp"
+   "icon": "assets/icons/c058.webp",
+   "app_id": 474
   },
   {
    "name": "枢木とわ",
    "rank": "",
-   "icon": "assets/icons/c073.webp"
+   "icon": "assets/icons/c073.webp",
+   "app_id": 516
   },
   {
    "name": "桃護りんね",
    "rank": "",
-   "icon": "assets/icons/c120.webp"
+   "icon": "assets/icons/c120.webp",
+   "app_id": 492
   },
   {
    "name": "桜咲はるね",
    "rank": "bronze",
-   "icon": "assets/icons/c032.webp"
+   "icon": "assets/icons/c032.webp",
+   "app_id": 400
   },
   {
    "name": "桜部 ふうり",
    "rank": "",
-   "icon": "assets/icons/c159.webp"
+   "icon": "assets/icons/c159.webp",
+   "app_id": 730
   },
   {
    "name": "水戸わかな",
    "rank": "silver",
-   "icon": "assets/icons/c008.webp"
+   "icon": "assets/icons/c008.webp",
+   "app_id": 232
   },
   {
    "name": "水森ねむり",
    "rank": "bronze",
-   "icon": "assets/icons/c063.webp"
+   "icon": "assets/icons/c063.webp",
+   "app_id": 495
   },
   {
    "name": "水瀬陽斗",
    "rank": "",
-   "icon": "assets/icons/c106.webp"
+   "icon": "assets/icons/c106.webp",
+   "app_id": 502
   },
   {
    "name": "水野ゆか",
    "rank": "bronze",
-   "icon": "assets/icons/c017.webp"
+   "icon": "assets/icons/c017.webp",
+   "app_id": 303
   },
   {
    "name": "水鏡なごみ",
    "rank": "",
-   "icon": "assets/icons/c116.webp"
+   "icon": "assets/icons/c116.webp",
+   "app_id": 599
   },
   {
    "name": "沙耶",
    "rank": "",
-   "icon": "assets/icons/c040.webp"
+   "icon": "assets/icons/c040.webp",
+   "app_id": 433
   },
   {
    "name": "海鈴なぎ",
    "rank": "",
-   "icon": "assets/icons/c087.webp"
+   "icon": "assets/icons/c087.webp",
+   "app_id": 567
   },
   {
    "name": "灰姫本能",
    "rank": "",
-   "icon": "assets/icons/c004.webp"
+   "icon": "assets/icons/c004.webp",
+   "app_id": 196
   },
   {
    "name": "焦赤緋色",
    "rank": "",
-   "icon": "assets/icons/c015.webp"
+   "icon": "assets/icons/c015.webp",
+   "app_id": 293
   },
   {
    "name": "熊手 紗",
    "rank": "",
-   "icon": "assets/icons/c124.webp"
+   "icon": "assets/icons/c124.webp",
+   "app_id": 629
   },
   {
    "name": "狼尾ちや",
    "rank": "",
-   "icon": "assets/icons/c145.webp"
+   "icon": "assets/icons/c145.webp",
+   "app_id": 662
   },
   {
    "name": "猫夢ねむ",
    "rank": "",
-   "icon": "assets/icons/c060.webp"
+   "icon": "assets/icons/c060.webp",
+   "app_id": 481
   },
   {
    "name": "玉木瑶",
    "rank": "silver",
-   "icon": "assets/icons/c010.webp"
+   "icon": "assets/icons/c010.webp",
+   "app_id": 241
   },
   {
    "name": "琴葉",
    "rank": "",
-   "icon": "assets/icons/c007.webp"
+   "icon": "assets/icons/c007.webp",
+   "app_id": 227
   },
   {
    "name": "田中 良典",
    "rank": "",
-   "icon": ""
+   "icon": "",
+   "app_id": 220
   },
   {
    "name": "白浪しおん",
    "rank": "",
-   "icon": "assets/icons/c018.webp"
+   "icon": "assets/icons/c018.webp",
+   "app_id": 306
   },
   {
    "name": "白猫にゃる",
    "rank": "bronze",
-   "icon": "assets/icons/c077.webp"
+   "icon": "assets/icons/c077.webp",
+   "app_id": 533
+  },
+  {
+   "name": "白虎雷夢",
+   "rank": "",
+   "icon": "assets/icons/c160.webp",
+   "app_id": 732
   },
   {
    "name": "白霧のえ",
    "rank": "",
-   "icon": "assets/icons/c101.webp"
+   "icon": "assets/icons/c101.webp",
+   "app_id": 601
   },
   {
    "name": "目黒れる",
    "rank": "",
-   "icon": "assets/icons/c050.webp"
+   "icon": "assets/icons/c050.webp",
+   "app_id": 456
   },
   {
    "name": "真白ひなた",
    "rank": "bronze",
-   "icon": "assets/icons/c003.webp"
+   "icon": "assets/icons/c003.webp",
+   "app_id": 188
   },
   {
    "name": "砂藤うゆ",
    "rank": "",
-   "icon": "assets/icons/c080.webp"
+   "icon": "assets/icons/c080.webp",
+   "app_id": 551
   },
   {
    "name": "秋乃夜長",
    "rank": "",
-   "icon": "assets/icons/c119.webp"
+   "icon": "assets/icons/c119.webp",
+   "app_id": 625
   },
   {
    "name": "秋兎",
    "rank": "",
-   "icon": "assets/icons/c156.webp"
+   "icon": "assets/icons/c156.webp",
+   "app_id": 717
   },
   {
    "name": "空乃まる",
    "rank": "",
-   "icon": "assets/icons/c133.webp"
+   "icon": "assets/icons/c133.webp",
+   "app_id": 654
   },
   {
    "name": "立花つむぎ",
    "rank": "",
-   "icon": "assets/icons/c146.webp"
+   "icon": "assets/icons/c146.webp",
+   "app_id": 667
   },
   {
    "name": "笑空虹心",
    "rank": "",
-   "icon": "assets/icons/c142.webp"
+   "icon": "assets/icons/c142.webp",
+   "app_id": 554
   },
   {
    "name": "糸落めろち",
    "rank": "",
-   "icon": "assets/icons/c144.webp"
+   "icon": "assets/icons/c144.webp",
+   "app_id": 642
   },
   {
    "name": "紗友里-Sayuri-",
    "rank": "",
-   "icon": "assets/icons/c152.webp"
+   "icon": "assets/icons/c152.webp",
+   "app_id": 690
   },
   {
    "name": "紗衣",
    "rank": "",
-   "icon": "assets/icons/c059.webp"
+   "icon": "assets/icons/c059.webp",
+   "app_id": 478
   },
   {
    "name": "紫月 ほたる",
    "rank": "bronze",
-   "icon": "assets/icons/c090.webp"
+   "icon": "assets/icons/c090.webp",
+   "app_id": 576
   },
   {
    "name": "結愛",
    "rank": "",
-   "icon": "assets/icons/c118.webp"
+   "icon": "assets/icons/c118.webp",
+   "app_id": 624
   },
   {
    "name": "綿愛芽 ふぃ",
    "rank": "",
-   "icon": "assets/icons/c071.webp"
+   "icon": "assets/icons/c071.webp",
+   "app_id": 513
   },
   {
    "name": "緑牙巳",
    "rank": "",
-   "icon": "assets/icons/c041.webp"
+   "icon": "assets/icons/c041.webp",
+   "app_id": 434
   },
   {
    "name": "縁",
    "rank": "",
-   "icon": "assets/icons/c075.webp"
+   "icon": "assets/icons/c075.webp",
+   "app_id": 528
   },
   {
    "name": "織",
    "rank": "",
-   "icon": "assets/icons/c155.webp"
+   "icon": "assets/icons/c155.webp",
+   "app_id": 716
   },
   {
    "name": "胡桃沢 くるみ",
    "rank": "",
-   "icon": "assets/icons/c110.webp"
+   "icon": "assets/icons/c110.webp",
+   "app_id": 593
   },
   {
    "name": "莉愛ふあ",
    "rank": "",
-   "icon": "assets/icons/c078.webp"
+   "icon": "assets/icons/c078.webp",
+   "app_id": 537
   },
   {
    "name": "葵 海亜",
    "rank": "",
-   "icon": "assets/icons/c153.webp"
+   "icon": "assets/icons/c153.webp",
+   "app_id": 696
   },
   {
    "name": "蒼羽れいな",
    "rank": "",
-   "icon": "assets/icons/c074.webp"
+   "icon": "assets/icons/c074.webp",
+   "app_id": 517
   },
   {
    "name": "蔦ヰ田リウ",
    "rank": "silver",
-   "icon": "assets/icons/c034.webp"
+   "icon": "assets/icons/c034.webp",
+   "app_id": 407
   },
   {
    "name": "西那てまり",
    "rank": "",
-   "icon": "assets/icons/c088.webp"
+   "icon": "assets/icons/c088.webp",
+   "app_id": 573
   },
   {
    "name": "言乃葩 和",
    "rank": "",
-   "icon": "assets/icons/c062.webp"
+   "icon": "assets/icons/c062.webp",
+   "app_id": 493
   },
   {
    "name": "赤絲 こゆび",
    "rank": "silver",
-   "icon": "assets/icons/c076.webp"
+   "icon": "assets/icons/c076.webp",
+   "app_id": 529
   },
   {
    "name": "超絶はおちー",
    "rank": "bronze",
-   "icon": "assets/icons/c150.webp"
+   "icon": "assets/icons/c150.webp",
+   "app_id": 236
   },
   {
    "name": "迷鏡 すやぁ",
    "rank": "",
-   "icon": "assets/icons/c132.webp"
+   "icon": "assets/icons/c132.webp",
+   "app_id": 639
   },
   {
    "name": "郵便めぇる",
    "rank": "",
-   "icon": "assets/icons/c151.webp"
+   "icon": "assets/icons/c151.webp",
+   "app_id": 682
   },
   {
    "name": "金江はるか",
    "rank": "",
-   "icon": "assets/icons/c091.webp"
+   "icon": "assets/icons/c091.webp",
+   "app_id": 581
   },
   {
    "name": "陽日葵 黄実",
    "rank": "",
-   "icon": "assets/icons/c089.webp"
+   "icon": "assets/icons/c089.webp",
+   "app_id": 575
   },
   {
    "name": "陽紬ひなた",
    "rank": "",
-   "icon": "assets/icons/c039.webp"
+   "icon": "assets/icons/c039.webp",
+   "app_id": 430
   },
   {
    "name": "雪織みみ",
    "rank": "",
-   "icon": "assets/icons/c109.webp"
+   "icon": "assets/icons/c109.webp",
+   "app_id": 591
   },
   {
    "name": "鬱ノ宮シアン",
    "rank": "",
-   "icon": "assets/icons/c067.webp"
+   "icon": "assets/icons/c067.webp",
+   "app_id": 504
   },
   {
    "name": "魔桜エナ",
    "rank": "",
-   "icon": "assets/icons/c026.webp"
+   "icon": "assets/icons/c026.webp",
+   "app_id": 381
   },
   {
    "name": "魔法少女ぴょん",
    "rank": "bronze",
-   "icon": "assets/icons/c021.webp"
+   "icon": "assets/icons/c021.webp",
+   "app_id": 319
   },
   {
    "name": "鹿鳴りあ",
    "rank": "gold",
-   "icon": "assets/icons/c002.webp"
+   "icon": "assets/icons/c002.webp",
+   "app_id": 172
   },
   {
    "name": "黒川水晶",
    "rank": "",
-   "icon": "assets/icons/c045.webp"
+   "icon": "assets/icons/c045.webp",
+   "app_id": 444
   },
   {
    "name": "黒柴えいら",
    "rank": "bronze",
-   "icon": "assets/icons/c019.webp"
+   "icon": "assets/icons/c019.webp",
+   "app_id": 313
   },
   {
    "name": "黝薔くろ",
    "rank": "",
-   "icon": "assets/icons/c005.webp"
+   "icon": "assets/icons/c005.webp",
+   "app_id": 201
   }
  ]
 }
