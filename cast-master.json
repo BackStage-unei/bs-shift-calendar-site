@@ -242,7 +242,7 @@
   },
   {
    "name": "三毒ローパ",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c006.webp",
    "app_id": 205
   },
@@ -518,7 +518,7 @@
   },
   {
    "name": "水森ねむり",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c063.webp",
    "app_id": 495
   },
@@ -530,7 +530,7 @@
   },
   {
    "name": "水野ゆか",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c017.webp",
    "app_id": 303
   },
@@ -776,7 +776,7 @@
   },
   {
    "name": "超絶はおちー",
-   "rank": "bronze",
+   "rank": "silver",
    "icon": "assets/icons/c150.webp",
    "app_id": 236
   },
