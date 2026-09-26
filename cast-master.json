@@ -181,6 +181,12 @@
    "app_id": 604
   },
   {
+   "name": "チョコ",
+   "rank": "",
+   "icon": "assets/icons/c162.webp",
+   "app_id": 726
+  },
+  {
    "name": "ヒロト・ユイ",
    "rank": "",
    "icon": "assets/icons/c084.webp",
@@ -311,6 +317,12 @@
    "rank": "bronze",
    "icon": "assets/icons/c036.webp",
    "app_id": 414
+  },
+  {
+   "name": "夜叉刀神 りょう",
+   "rank": "",
+   "icon": "assets/icons/c163.webp",
+   "app_id": 736
   },
   {
    "name": "夜狩うる",
@@ -851,6 +863,12 @@
    "rank": "bronze",
    "icon": "assets/icons/c019.webp",
    "app_id": 313
+  },
+  {
+   "name": "黒羽リリ",
+   "rank": "",
+   "icon": "assets/icons/c161.webp",
+   "app_id": 706
   },
   {
    "name": "黝薔くろ",
