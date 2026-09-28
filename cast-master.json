@@ -97,6 +97,12 @@
    "app_id": 583
   },
   {
+   "name": "みゃあ",
+   "rank": "",
+   "icon": "assets/icons/c166.webp",
+   "app_id": 728
+  },
+  {
    "name": "みーこ",
    "rank": "",
    "icon": "assets/icons/c079.webp",
@@ -403,9 +409,9 @@
    "app_id": 391
   },
   {
-   "name": "小鞠 るな",
+   "name": "小鞠るな",
    "rank": "",
-   "icon": "assets/icons/c157.webp",
+   "icon": "assets/icons/c165.webp",
    "app_id": 722
   },
   {
@@ -691,9 +697,9 @@
    "app_id": 642
   },
   {
-   "name": "紗友里-Sayuri-",
+   "name": "紗友里ｰSayuriｰ",
    "rank": "",
-   "icon": "assets/icons/c152.webp",
+   "icon": "assets/icons/c164.webp",
    "app_id": 690
   },
   {
