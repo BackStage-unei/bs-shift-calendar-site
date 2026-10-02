@@ -170,7 +170,7 @@
   },
   {
    "name": "サヤ・グレース",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c023.webp",
    "app_id": 328
   },
@@ -290,7 +290,7 @@
   },
   {
    "name": "千里香",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c033.webp",
    "app_id": 403
   },
@@ -332,7 +332,7 @@
   },
   {
    "name": "夜狩うる",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c096.webp",
    "app_id": 588
   },
@@ -673,6 +673,12 @@
    "app_id": 717
   },
   {
+   "name": "稲鈴｜京都を巡るVTuber",
+   "rank": "",
+   "icon": "assets/icons/c167.webp",
+   "app_id": 754
+  },
+  {
    "name": "空乃まる",
    "rank": "",
    "icon": "assets/icons/c133.webp",
@@ -710,7 +716,7 @@
   },
   {
    "name": "紫月 ほたる",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c090.webp",
    "app_id": 576
   },
