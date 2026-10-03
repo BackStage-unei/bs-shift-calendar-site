@@ -14,7 +14,7 @@
   },
   {
    "name": "MUZU",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c108.webp",
    "app_id": 541
   },
@@ -26,7 +26,7 @@
   },
   {
    "name": "youri",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c130.webp",
    "app_id": 630
   },
@@ -140,7 +140,7 @@
   },
   {
    "name": "ろん",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c143.webp",
    "app_id": 590
   },
@@ -464,7 +464,7 @@
   },
   {
    "name": "春原なずな",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c065.webp",
    "app_id": 500
   },
@@ -644,7 +644,7 @@
   },
   {
    "name": "目黒れる",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c050.webp",
    "app_id": 456
   },
