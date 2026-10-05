@@ -349,6 +349,12 @@
    "app_id": 587
   },
   {
+   "name": "天使てん",
+   "rank": "",
+   "icon": "assets/icons/c170.webp",
+   "app_id": 762
+  },
+  {
    "name": "天使める",
    "rank": "",
    "icon": "assets/icons/c147.webp",
@@ -437,6 +443,12 @@
    "rank": "",
    "icon": "assets/icons/c149.webp",
    "app_id": 711
+  },
+  {
+   "name": "愛依羅しぃ（あいらしぃ）",
+   "rank": "",
+   "icon": "assets/icons/c168.webp",
+   "app_id": 727
   },
   {
    "name": "愛祈はあと",
@@ -661,6 +673,12 @@
    "app_id": 551
   },
   {
+   "name": "神王 セイガ",
+   "rank": "",
+   "icon": "assets/icons/c171.webp",
+   "app_id": 767
+  },
+  {
    "name": "秋乃夜長",
    "rank": "",
    "icon": "assets/icons/c119.webp",
@@ -875,6 +893,12 @@
    "rank": "",
    "icon": "assets/icons/c005.webp",
    "app_id": 201
+  },
+  {
+   "name": "🌙月見 おさつ🍠",
+   "rank": "",
+   "icon": "assets/icons/c169.webp",
+   "app_id": 741
   }
  ]
 }
