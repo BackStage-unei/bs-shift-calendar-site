@@ -43,6 +43,12 @@
    "app_id": 501
   },
   {
+   "name": "うたの かめ",
+   "rank": "",
+   "icon": "assets/icons/c172.webp",
+   "app_id": 724
+  },
+  {
    "name": "おめがまる",
    "rank": "",
    "icon": "assets/icons/c025.webp",
@@ -263,6 +269,12 @@
    "rank": "",
    "icon": "assets/icons/c125.webp",
    "app_id": 633
+  },
+  {
+   "name": "二階堂レイ",
+   "rank": "",
+   "icon": "assets/icons/c173.webp",
+   "app_id": 756
   },
   {
    "name": "六華ミル",
@@ -773,6 +785,12 @@
    "rank": "",
    "icon": "assets/icons/c110.webp",
    "app_id": 593
+  },
+  {
+   "name": "花守",
+   "rank": "",
+   "icon": "assets/icons/c174.webp",
+   "app_id": 758
   },
   {
    "name": "葵 海亜",
