@@ -42,6 +42,10 @@
     // 埋め込みの中ではスクロールさせない（指がどこにあっても STUDIO のページだけが動くように）。
     // 中身は枠の高さに収まる前提。枠を低くすると下が切れるので、枠の高さを変えたら必ず確認する
     document.documentElement.dataset.embedded = '1';
+    // 「← カレンダー」で STUDIO に戻ると、iPhone の Safari はページを覚えたまま復元する。
+    // そのとき枠の中だけタップもスクロールも効かなくなる（2回タップで反応する）ことがあるため、
+    // 復元されたら枠の中だけ読み込み直す。STUDIO のページとスクロール位置はそのまま
+    window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
   }
 
   // 埋め込みから全画面で開いたか（dayPageHref が付ける from=studio）。戻り先は STUDIO のスケジュールページ
@@ -61,7 +65,14 @@
    * ブラウザが STUDIO のページを覚えていれば読み込み直さずに戻れる（点滅しない・スクロール位置もそのまま）。
    * 共有リンクなどで直接開いたとき、または戻れなかったときは、STUDIO のページへ移動する。
    */
+  // 戻る途中か。連打で history.go が重なると STUDIO より前のページまで戻ってしまうので、1回だけ受け付ける（qa7 P1）。
+  // 戻る・進むでこのページが復元されたら、また押せるように戻す
+  let leaving = false;
+  window.addEventListener('pageshow', () => { leaving = false; });
+
   function backToStudio() {
+    if (leaving) return;
+    leaving = true;
     const depth = history.state && Number.isInteger(history.state.depth) ? history.state.depth : null;
     if (!cameFromEmbed || depth === null || history.length < depth + 2) {
       location.assign(STUDIO_SCHEDULE_URL);

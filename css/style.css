@@ -78,7 +78,7 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
   color: var(--text-sub);
   text-decoration: none;
 }
-.hero__back:hover { color: var(--accent); }
+@media (hover: hover) { .hero__back:hover { color: var(--accent); } }
 .hero__eyebrow {
   margin: 0 0 4px;
   font-family: var(--font-en);
@@ -140,7 +140,7 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
    そろえて、埋め込みでも普通に開いたときと同じ大きさにする（行の高さが違うと枠からはみ出す） */
 a.week__day, a.cal__cell { text-decoration: none; font-size: 13.3333px; line-height: normal; }
 a.week__day { color: inherit; }
-.week__day:not(:disabled):hover { transform: translateY(-2px); border-color: var(--accent); }
+@media (hover: hover) { .week__day:not(:disabled):hover { transform: translateY(-2px); border-color: var(--accent); } }
 .week__day:disabled { opacity: 0.45; }
 .week__day.is-today {
   border: 2px solid transparent;
@@ -219,7 +219,7 @@ a.week__day { color: inherit; }
   font-size: 12px;
   color: var(--text-sub);
 }
-.cal__btn:not(:disabled):hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) { .cal__btn:not(:disabled):hover { border-color: var(--accent); color: var(--accent); } }
 .cal__btn:disabled { opacity: 0.3; }
 .cal__grid {
   display: grid;
@@ -250,7 +250,7 @@ a.week__day { color: inherit; }
   color: var(--text);
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
-.cal__cell.has-data:hover { transform: translateY(-2px); border-color: var(--accent); }
+@media (hover: hover) { .cal__cell.has-data:hover { transform: translateY(-2px); border-color: var(--accent); } }
 .cal__cell.is-out { opacity: 0.35; }
 .cal__cell.is-today {
   border: 2px solid transparent;
@@ -271,7 +271,7 @@ a.week__day { color: inherit; }
 /* ---------- 日ビュー ---------- */
 .day__bar { display: flex; flex-direction: column; gap: 6px; padding-top: 22px; }
 .day__back { align-self: flex-start; font-size: 13px; color: var(--text-sub); }
-.day__back:hover { color: var(--accent); }
+@media (hover: hover) { .day__back:hover { color: var(--accent); } }
 .day__nav { display: flex; align-items: center; justify-content: center; gap: 16px; }
 .day__date { margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.06em; }
 
