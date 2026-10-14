@@ -38,28 +38,32 @@
   // 枠の中で日ビューを出すと iPhone でスクロールが取り合いになるため、
   // 埋め込みの中では日ビューを出さず、日付のタップで「全画面（トップレベル）」の日ビューを開く。
   const EMBEDDED = isEmbedded(window);
+  const RESTORE_KEY = 'bs-embed-strip-left';
+  // 復元のために読み込み直したときだけ、前の横スクロール位置（数値）。それ以外は null
+  let RESTORED_LEFT = null;
+  if (EMBEDDED) {
+    try {
+      const nav = performance.getEntriesByType('navigation')[0];
+      const saved = sessionStorage.getItem(RESTORE_KEY);
+      sessionStorage.removeItem(RESTORE_KEY);
+      if (nav && nav.type === 'reload' && saved !== null && Number.isFinite(Number(saved))) RESTORED_LEFT = Number(saved);
+    } catch (e) { RESTORED_LEFT = null; }
+  }
   if (EMBEDDED) {
     // 埋め込みの中ではスクロールさせない（指がどこにあっても STUDIO のページだけが動くように）。
     // 中身は枠の高さに収まる前提。枠を低くすると下が切れるので、枠の高さを変えたら必ず確認する
     document.documentElement.dataset.embedded = '1';
     // 「← カレンダー」で STUDIO に戻ると、iPhone の Safari はページを覚えたまま復元する。
-    // そのとき枠の中だけタップもスクロールも効かなくなる（2回タップで反応する）ことがあるため、
-    // 復元されたら枠の中のカード・カレンダーを作り直す（読み込み直すと枠の中がちらつくので、同じ中身をその場で差し替える）。
-    // 横スライダーは中身だけでなくスクロールする箱ごと新しくする（箱が古いままだと横スクロールが効かないままだった）。
-    // 復元の合図は pageshow（persisted）と visibilitychange の両方で拾い、1回だけ作り直す。横スクロールの位置はそのまま
-    let leftPage = false;
-    window.addEventListener('pagehide', () => { leftPage = true; });
-    const rebuildAfterRestore = () => {
-      if (!leftPage || document.visibilityState !== 'visible') return;
-      leftPage = false;
-      const old = document.getElementById('weekStrip');
-      const left = old.scrollLeft;
-      old.replaceWith(old.cloneNode(false));
-      renderTop();
-      document.getElementById('weekStrip').scrollLeft = left;
-    };
-    window.addEventListener('pageshow', rebuildAfterRestore);
-    document.addEventListener('visibilitychange', rebuildAfterRestore);
+    // そのとき枠の中だけタップも横スクロールも効かなくなる（2回タップで反応する）。
+    // 中身や横スライダーの箱をその場で作り直しても直らなかったので、復元されたら枠の中を読み込み直す。
+    // ちらつかないよう、読み込み直したときは表示アニメーションを出さず、横スクロールの位置も戻す（RESTORED_LEFT）
+    window.addEventListener('pagehide', () => {
+      try {
+        const strip = document.getElementById('weekStrip');
+        sessionStorage.setItem(RESTORE_KEY, String(strip ? strip.scrollLeft : 0));
+      } catch (e) { /* 保存できなくても動きは同じ（位置だけ戻らない） */ }
+    });
+    window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
   }
 
   // 埋め込みから全画面で開いたか（dayPageHref が付ける from=studio）。戻り先は STUDIO のスケジュールページ
@@ -151,8 +155,14 @@
       renderTop();
       dayView.hidden = true;
       topView.hidden = false;
-      replayAnim(topView);
-      centerStrip(true); // 表示されてから（レイアウト確定後）中央寄せ
+      if (RESTORED_LEFT !== null) {
+        // 復元のための読み込み直し: アニメーションなしで、前の位置のまま出す（ちらつき対策）
+        document.getElementById('weekStrip').scrollLeft = RESTORED_LEFT;
+        RESTORED_LEFT = null;
+      } else {
+        replayAnim(topView);
+        centerStrip(true); // 表示されてから（レイアウト確定後）中央寄せ
+      }
     }
     window.scrollTo(0, 0);
   }
