@@ -40,6 +40,59 @@ function sundayStartOf(s) {
   return addDays(s, -((weekdayIndex(s) + 1) % 7));
 }
 
+/**
+ * "YYYY-MM-DD" の形で、しかも実在する日付かどうか（URL の ?date= の確認用）。
+ * 例: "2026-10-14" → true / "2026-02-30" や "abc" → false
+ */
+function isDateStr(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  return addDays(s, 0) === s; // 2/30 などは Date が繰り上げるので一致しなくなる
+}
+
+/**
+ * その日を含む週（月曜〜日曜。データ週と同じ区切り）の [月曜, 日曜] を返す。
+ * 例: "2026-10-14"（水） → ["2026-10-12", "2026-10-18"]
+ */
+function weekRangeOf(s) {
+  const monday = weekStartOf(s);
+  return [monday, addDays(monday, 6)];
+}
+
+/** ["2026-10-12", "2026-10-18"] → "2026.10.12 - 2026.10.18"（「今週のシフト」の期間表示） */
+function formatRangeDots(range) {
+  return `${range[0].replaceAll('-', '.')} - ${range[1].replaceAll('-', '.')}`;
+}
+
+/**
+ * 他のページ（STUDIO など）の iframe の中で表示されているかどうか。
+ * 親ページを調べられない（例外が出る）環境も、埋め込みとして扱う。
+ */
+function isEmbedded(win) {
+  try {
+    return win.self !== win.top;
+  } catch (e) {
+    return true;
+  }
+}
+
+/**
+ * 日ビューを全画面で開くための URL を作る。
+ * 今の URL から theme と bg だけを引き継ぎ、date を付ける（それ以外のパラメータは捨てる）。
+ * 例: ".../?theme=luxe&bg=veil" + "2026-10-14" → ".../?theme=luxe&bg=veil&date=2026-10-14"
+ */
+function dayPageHref(currentHref, date) {
+  const current = new URL(currentHref);
+  const out = new URL(currentHref);
+  out.search = '';
+  out.hash = '';
+  for (const key of ['theme', 'bg']) {
+    const value = current.searchParams.get(key);
+    if (value !== null) out.searchParams.set(key, value);
+  }
+  out.searchParams.set('date', date);
+  return out.toString();
+}
+
 const WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日'];
 const WEEKDAY_EN = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
 

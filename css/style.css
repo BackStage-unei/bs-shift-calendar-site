@@ -42,6 +42,8 @@ body {
    clear = 完全透過 / veil = 半透明ベール（テーマごとの --veil 色） */
 html[data-bg='clear'] body { background: transparent; }
 html[data-bg='veil'] body { background: var(--veil); }
+/* 埋め込みの中ではスクロールさせない（STUDIO のページのスクロールと取り合いにならないように） */
+html[data-embedded], html[data-embedded] body { overflow: hidden; }
 img { max-width: 100%; }
 button {
   font-family: inherit;
@@ -133,6 +135,11 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
   text-align: left;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
+/* 埋め込みの中ではカード・日付がリンク（a 要素）になる。
+   リンクの下線・色を消し、文字サイズと行の高さをボタン（ブラウザ既定 13.33px・normal）に
+   そろえて、埋め込みでも普通に開いたときと同じ大きさにする（行の高さが違うと枠からはみ出す） */
+a.week__day, a.cal__cell { text-decoration: none; font-size: 13.3333px; line-height: normal; }
+a.week__day { color: inherit; }
 .week__day:not(:disabled):hover { transform: translateY(-2px); border-color: var(--accent); }
 .week__day:disabled { opacity: 0.45; }
 .week__day.is-today {

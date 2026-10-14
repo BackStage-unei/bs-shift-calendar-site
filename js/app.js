@@ -9,6 +9,9 @@
  * STUDIO の iframe sandbox 内で history 操作が失敗する環境では
  * 画面内遷移のみにフォールバックする（CastShowcase と同じ方針）。
  *
+ * 埋め込み（iframe の中）では日ビューを出さない。日付をタップすると
+ * target="_top" のリンクで、枠の外（トップレベル）に日ビューを全画面で開く。
+ *
  * 描画は el()（textContent）のみで行い、innerHTML は使わない。
  * ============================================================= */
 (function () {
@@ -30,9 +33,21 @@
 
   const params = new URLSearchParams(location.search);
 
+  // ---------- 埋め込み判定 ----------
+  // STUDIO の埋め込み枠は高さが px 固定（PC 950・スマホ 900）で、日ビューは枠に収まらない。
+  // 枠の中で日ビューを出すと iPhone でスクロールが取り合いになるため、
+  // 埋め込みの中では日ビューを出さず、日付のタップで「全画面（トップレベル）」の日ビューを開く。
+  const EMBEDDED = isEmbedded(window);
+  if (EMBEDDED) {
+    // 埋め込みの中ではスクロールさせない（指がどこにあっても STUDIO のページだけが動くように）。
+    // 中身は枠の高さに収まる前提。枠を低くすると下が切れるので、枠の高さを変えたら必ず確認する
+    document.documentElement.dataset.embedded = '1';
+  }
+
   // 背景モード（埋め込み先に馴染ませる）: ?bg=clear（完全透過） / ?bg=veil（半透明ベール）
+  // 埋め込みの中でだけ効かせる。全画面で開いた日ビューは、通常の濃い背景にする
   const bgMode = params.get('bg');
-  if (bgMode === 'clear' || bgMode === 'veil') {
+  if (EMBEDDED && (bgMode === 'clear' || bgMode === 'veil')) {
     document.documentElement.dataset.bg = bgMode;
   }
 
@@ -69,7 +84,8 @@
   }
 
   function render(date) {
-    if (date && dayByDate.has(date)) {
+    // 埋め込みの中では日ビューを出さない（?date= 付きで読み込まれても最初の画面）
+    if (!EMBEDDED && date && dayByDate.has(date)) {
       renderDay(date);
       topView.hidden = true;
       dayView.hidden = false;
@@ -114,20 +130,38 @@
     strip.scrollTo({ left, behavior: instant ? 'instant' : 'smooth' });
   }
 
+  /**
+   * 日ビューへ移る部品（ストリップのカード・カレンダーの日付）を作る。
+   * - 普通に開いたとき: ボタン。押すとページ内で日ビューに切り替える
+   * - 埋め込みの中: リンク（target="_top"）。押すと枠の外＝トップレベルで日ビューを開く
+   *   （JS で top.location を書き換える方式は STUDIO の sandbox で失敗しやすいので使わない）
+   */
+  function dayOpener(className, date) {
+    if (EMBEDDED) {
+      const a = el('a', className);
+      a.href = dayPageHref(location.href, date);
+      a.target = '_top';
+      return a;
+    }
+    const btn = el('button', className);
+    btn.type = 'button';
+    btn.addEventListener('click', () => navigate(date));
+    return btn;
+  }
+
   function renderTop() {
     const strip = document.getElementById('weekStrip');
     strip.textContent = '';
-    const first = allDates[0];
-    const last = allDates[allDates.length - 1];
-    document.getElementById('weekRangeEn').textContent =
-      first ? `${first.replaceAll('-', '.')} - ${last.replaceAll('-', '.')}` : '';
 
     const focus = stripFocusDate();
+    // 「今週のシフト」の期間 = ストリップの中心に置く日（今日。公開データが無ければ最寄りの公開日）を含む週
+    document.getElementById('weekRangeEn').textContent =
+      focus ? formatRangeDots(weekRangeOf(focus)) : '';
+
     // 公開済みの全日を1本のスライダーとして並べる（過去週へもスワイプで遡れる）
     for (const date of allDates) {
       const day = dayByDate.get(date);
-      const card = el('button', 'week__day');
-      card.type = 'button';
+      const card = dayOpener('week__day', date);
       if (date === TODAY) card.classList.add('is-today');
       if (date === focus) card.classList.add('is-focus');
 
@@ -152,7 +186,6 @@
       if (!names.length) faces.append(el('span', 'week__empty', '—'));
       card.append(faces);
       card.append(el('div', 'week__count', `${names.length}名`));
-      card.addEventListener('click', () => navigate(date));
       strip.append(card);
     }
 
@@ -195,15 +228,13 @@
       const inMonth = d.slice(0, 7) === calMonth;
       if (!inMonth && d >= `${nextMonth}-01` && isSunday(d)) break;
       const day = dayByDate.get(d);
-      const cell = el(day ? 'button' : 'div', 'cal__cell');
-      if (day) cell.type = 'button';
+      const cell = day ? dayOpener('cal__cell', d) : el('div', 'cal__cell');
       if (!inMonth) cell.classList.add('is-out');
       if (d === TODAY) cell.classList.add('is-today');
       cell.append(el('span', 'cal__daynum', String(Number(d.slice(8)))));
       if (day) {
         cell.classList.add('has-data');
         cell.append(el('span', 'cal__count', `${castsOfDay(day).length}名`));
-        cell.addEventListener('click', () => navigate(d));
       }
       grid.append(cell);
     }
@@ -437,5 +468,8 @@
   });
 
   // ---------- 起動 ----------
-  navigate(params.get('date'), true);
+  // 埋め込みの中、または ?date= が公開データに無い日・不正な値のときは、最初の画面を出して
+  // URL からも date を外す（壊れた ?date= が残らないように）
+  const startDate = params.get('date');
+  navigate(!EMBEDDED && isDateStr(startDate) && dayByDate.has(startDate) ? startDate : null, true);
 })();
