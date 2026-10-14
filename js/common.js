@@ -77,8 +77,8 @@ function isEmbedded(win) {
 
 /**
  * 日ビューを全画面で開くための URL を作る。
- * 今の URL から theme と bg だけを引き継ぎ、date を付ける（それ以外のパラメータは捨てる）。
- * 例: ".../?theme=luxe&bg=veil" + "2026-10-14" → ".../?theme=luxe&bg=veil&date=2026-10-14"
+ * 今の URL から theme と bg だけを引き継ぎ、date と from=studio を付ける（それ以外のパラメータは捨てる）。
+ * 例: ".../?theme=luxe&bg=veil" + "2026-10-14" → ".../?theme=luxe&bg=veil&date=2026-10-14&from=studio"
  */
 function dayPageHref(currentHref, date) {
   const current = new URL(currentHref);
@@ -90,6 +90,8 @@ function dayPageHref(currentHref, date) {
     if (value !== null) out.searchParams.set(key, value);
   }
   out.searchParams.set('date', date);
+  // 公式サイト（STUDIO）の埋め込みから開いた印。「← カレンダー」で STUDIO のスケジュールページへ戻すのに使う
+  out.searchParams.set('from', 'studio');
   return out.toString();
 }
 

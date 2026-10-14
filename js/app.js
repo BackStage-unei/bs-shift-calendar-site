@@ -44,6 +44,10 @@
     document.documentElement.dataset.embedded = '1';
   }
 
+  // 埋め込みから全画面で開いたか（dayPageHref が付ける from=studio）。戻り先は STUDIO のスケジュールページ
+  const STUDIO_SCHEDULE_URL = 'https://violet591727.studio.site/Schedule';
+  const FROM_STUDIO = !EMBEDDED && params.get('from') === 'studio';
+
   // 背景モード（埋め込み先に馴染ませる）: ?bg=clear（完全透過） / ?bg=veil（半透明ベール）
   // 埋め込みの中でだけ効かせる。全画面で開いた日ビューは、通常の濃い背景にする
   const bgMode = params.get('bg');
@@ -253,7 +257,11 @@
     next.disabled = idx >= allDates.length - 1;
     prev.onclick = () => navigate(allDates[idx - 1]);
     next.onclick = () => navigate(allDates[idx + 1]);
-    document.getElementById('dayBack').onclick = () => navigate(null);
+    document.getElementById('dayBack').onclick = () => {
+      // 公式サイトの埋め込みから全画面で開いたときは、github.io の最初の画面ではなく STUDIO のスケジュールページへ戻す
+      if (FROM_STUDIO) location.assign(STUDIO_SCHEDULE_URL);
+      else navigate(null);
+    };
 
     // タブ（画像がある日だけ「画像」タブを出す）
     const imagePath = DATA.images[date];
