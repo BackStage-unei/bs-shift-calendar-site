@@ -44,8 +44,15 @@
     document.documentElement.dataset.embedded = '1';
     // 「← カレンダー」で STUDIO に戻ると、iPhone の Safari はページを覚えたまま復元する。
     // そのとき枠の中だけタップもスクロールも効かなくなる（2回タップで反応する）ことがあるため、
-    // 復元されたら枠の中だけ読み込み直す。STUDIO のページとスクロール位置はそのまま
-    window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
+    // 復元されたら枠の中のカード・カレンダーを作り直す（読み込み直すと枠の中がちらつくので、同じ中身をその場で差し替える）。
+    // 横スクロールの位置はそのまま
+    window.addEventListener('pageshow', (e) => {
+      if (!e.persisted) return;
+      const strip = document.getElementById('weekStrip');
+      const left = strip.scrollLeft;
+      renderTop();
+      strip.scrollLeft = left;
+    });
   }
 
   // 埋め込みから全画面で開いたか（dayPageHref が付ける from=studio）。戻り先は STUDIO のスケジュールページ
