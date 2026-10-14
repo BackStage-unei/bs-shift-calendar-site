@@ -47,6 +47,31 @@
   // 埋め込みから全画面で開いたか（dayPageHref が付ける from=studio）。戻り先は STUDIO のスケジュールページ
   const STUDIO_SCHEDULE_URL = 'https://violet591727.studio.site/Schedule';
   const FROM_STUDIO = !EMBEDDED && params.get('from') === 'studio';
+  // 直前のページが「埋め込みの中のカレンダー」（同じサイト）なら、履歴を戻れば STUDIO のページに着く
+  let cameFromEmbed = false;
+  try {
+    cameFromEmbed = FROM_STUDIO && !!document.referrer && new URL(document.referrer).origin === location.origin;
+  } catch (e) {
+    cameFromEmbed = false;
+  }
+
+  /**
+   * STUDIO のスケジュールページへ戻る。
+   * 埋め込みから来たときは「ブラウザの戻る」と同じ動き（history.go）にする。
+   * ブラウザが STUDIO のページを覚えていれば読み込み直さずに戻れる（点滅しない・スクロール位置もそのまま）。
+   * 共有リンクなどで直接開いたとき、または戻れなかったときは、STUDIO のページへ移動する。
+   */
+  function backToStudio() {
+    const depth = history.state && Number.isInteger(history.state.depth) ? history.state.depth : null;
+    if (!cameFromEmbed || depth === null || history.length < depth + 2) {
+      location.assign(STUDIO_SCHEDULE_URL);
+      return;
+    }
+    // 戻れずに残っていたときの保険。ページを離れたら取り消す（戻る・進むで復元されたときに誤って動かないように）
+    const fallback = setTimeout(() => location.assign(STUDIO_SCHEDULE_URL), 1500);
+    window.addEventListener('pagehide', () => clearTimeout(fallback), { once: true });
+    history.go(-(depth + 1));
+  }
 
   // 背景モード（埋め込み先に馴染ませる）: ?bg=clear（完全透過） / ?bg=veil（半透明ベール）
   // 埋め込みの中でだけ効かせる。全画面で開いた日ビューは、通常の濃い背景にする
@@ -64,7 +89,10 @@
         const url = new URL(location.href);
         if (date) url.searchParams.set('date', date);
         else url.searchParams.delete('date');
-        history[replace ? 'replaceState' : 'pushState']({ date }, '', url);
+        // depth: このページに来てから pushState で積んだ数（「← カレンダー」で STUDIO まで戻る段数に使う）
+        const cur = (history.state && history.state.depth) || 0;
+        const depth = replace ? cur : cur + 1;
+        history[replace ? 'replaceState' : 'pushState']({ date, depth }, '', url);
       } catch (e) {
         canHistory = false;
       }
@@ -259,7 +287,7 @@
     next.onclick = () => navigate(allDates[idx + 1]);
     document.getElementById('dayBack').onclick = () => {
       // 公式サイトの埋め込みから全画面で開いたときは、github.io の最初の画面ではなく STUDIO のスケジュールページへ戻す
-      if (FROM_STUDIO) location.assign(STUDIO_SCHEDULE_URL);
+      if (FROM_STUDIO) backToStudio();
       else navigate(null);
     };
 
