@@ -379,6 +379,12 @@
    "app_id": 499
   },
   {
+   "name": "天笠 澪",
+   "rank": "",
+   "icon": "assets/icons/c177.webp",
+   "app_id": 757
+  },
+  {
    "name": "天羽るぅあ",
    "rank": "",
    "icon": "assets/icons/c115.webp",
@@ -473,6 +479,12 @@
    "rank": "",
    "icon": "assets/icons/c175.webp",
    "app_id": 770
+  },
+  {
+   "name": "才苗りあん",
+   "rank": "",
+   "icon": "assets/icons/c176.webp",
+   "app_id": 748
   },
   {
    "name": "旅乃とき",
