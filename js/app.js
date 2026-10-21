@@ -434,6 +434,25 @@
     }).join(' / ');
   }
 
+  /** 大会実績の印（緑の細枠＋双葉）。h は build で検査済みの [{e: 大会名, t: 称号, u?: URL}]（正は bs-cast-finder）。
+      URL は https のときだけリンク（別タブ）。狭い画面では大会名と称号の間でまず折り返す */
+  function honorBadges(honors) {
+    const wrap = el('div', 'honor-list');
+    for (const h of honors) {
+      if (!h || typeof h.e !== 'string' || typeof h.t !== 'string') continue;
+      const link = typeof h.u === 'string' && /^https:\/\//.test(h.u);
+      const b = el(link ? 'a' : 'p', `honor-badge${link ? ' is-link' : ''}`);
+      b.append(el('span', 'honor-badge__seg', h.e), el('span', 'honor-badge__seg', h.t));
+      if (link) {
+        b.href = h.u;
+        b.target = '_blank';
+        b.rel = 'noopener';
+      }
+      wrap.append(b);
+    }
+    return wrap;
+  }
+
   function openCastPopup(name, date) {
     const info = castInfo(name);
     const day = dayByDate.get(date);
@@ -462,6 +481,7 @@
     if (info.r) {
       body.append(el('p', `rank-badge rank-${info.r}`, `${info.r.toUpperCase()} CLASS`));
     }
+    if (Array.isArray(info.h) && info.h.length) body.append(honorBadges(info.h));
     const ranges = day ? shiftRangeLabel(day.slots, name) : '';
     if (ranges) body.append(el('span', 'shift-badge', `この日の出勤 ${ranges}`));
     if (info.p && info.p.catch) {
