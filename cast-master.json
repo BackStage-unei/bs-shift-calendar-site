@@ -241,12 +241,6 @@
    "app_id": 506
   },
   {
-   "name": "ライラ",
-   "rank": "",
-   "icon": "assets/icons/c049.webp",
-   "app_id": 454
-  },
-  {
    "name": "ルカ・ミント",
    "rank": "",
    "icon": "assets/icons/c114.webp",
@@ -323,12 +317,6 @@
    "rank": "",
    "icon": "assets/icons/c094.webp",
    "app_id": 586
-  },
-  {
-   "name": "園曽える",
-   "rank": "",
-   "icon": "assets/icons/c038.webp",
-   "app_id": 420
   },
   {
    "name": "堀落ライ",
