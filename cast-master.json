@@ -14,7 +14,7 @@
   },
   {
    "name": "MUZU",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c108.webp",
    "app_id": 541
   },
@@ -26,7 +26,7 @@
   },
   {
    "name": "youri",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c130.webp",
    "app_id": 630
   },
@@ -38,7 +38,7 @@
   },
   {
    "name": "あまタクシー",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c066.webp",
    "app_id": 501
   },
@@ -62,7 +62,7 @@
   },
   {
    "name": "こぐまもる",
-   "rank": "silver",
+   "rank": "bronze",
    "icon": "assets/icons/c030.webp",
    "app_id": 392
   },
@@ -80,7 +80,7 @@
   },
   {
    "name": "にこ",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c037.webp",
    "app_id": 416
   },
@@ -236,7 +236,7 @@
   },
   {
    "name": "ミラ・エトワール",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c068.webp",
    "app_id": 506
   },
@@ -416,7 +416,7 @@
   },
   {
    "name": "寝猫なな",
-   "rank": "bronze",
+   "rank": "",
    "icon": "assets/icons/c072.webp",
    "app_id": 514
   },
@@ -566,7 +566,7 @@
   },
   {
    "name": "水戸わかな",
-   "rank": "silver",
+   "rank": "bronze",
    "icon": "assets/icons/c008.webp",
    "app_id": 232
   },
@@ -818,7 +818,7 @@
   },
   {
    "name": "蔦ヰ田リウ",
-   "rank": "silver",
+   "rank": "bronze",
    "icon": "assets/icons/c034.webp",
    "app_id": 407
   },
