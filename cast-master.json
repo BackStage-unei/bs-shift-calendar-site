@@ -505,6 +505,12 @@
    "app_id": 500
   },
   {
+   "name": "月島静香",
+   "rank": "",
+   "icon": "assets/icons/c181.webp",
+   "app_id": 773
+  },
+  {
    "name": "月白めろあ",
    "rank": "",
    "icon": "assets/icons/c113.webp",
@@ -734,7 +740,7 @@
   },
   {
    "name": "笑空虹心",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c142.webp",
    "app_id": 554
   },
@@ -878,7 +884,7 @@
   },
   {
    "name": "雪織みみ",
-   "rank": "",
+   "rank": "bronze",
    "icon": "assets/icons/c109.webp",
    "app_id": 591
   },
