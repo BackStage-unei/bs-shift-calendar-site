@@ -361,12 +361,6 @@
    "app_id": 762
   },
   {
-   "name": "天使める",
-   "rank": "",
-   "icon": "assets/icons/c147.webp",
-   "app_id": 684
-  },
-  {
    "name": "天使らおん",
    "rank": "",
    "icon": "assets/icons/c064.webp",
@@ -505,9 +499,9 @@
    "app_id": 500
   },
   {
-   "name": "月島静香",
+   "name": "月島エリザベス静香",
    "rank": "",
-   "icon": "assets/icons/c181.webp",
+   "icon": "assets/icons/c182.webp",
    "app_id": 773
   },
   {
