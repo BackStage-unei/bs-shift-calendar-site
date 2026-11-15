@@ -439,6 +439,12 @@
    "app_id": 558
   },
   {
+   "name": "山田　何某",
+   "rank": "",
+   "icon": "assets/icons/c185.webp",
+   "app_id": 782
+  },
+  {
    "name": "影近ゼル",
    "rank": "",
    "icon": "assets/icons/c054.webp",
@@ -503,6 +509,12 @@
    "rank": "bronze",
    "icon": "assets/icons/c065.webp",
    "app_id": 500
+  },
+  {
+   "name": "月城にあ",
+   "rank": "",
+   "icon": "assets/icons/c184.webp",
+   "app_id": 752
   },
   {
    "name": "月島エリザベス静香",
