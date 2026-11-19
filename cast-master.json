@@ -145,12 +145,6 @@
    "app_id": 510
   },
   {
-   "name": "ゆあ",
-   "rank": "",
-   "icon": "assets/icons/c121.webp",
-   "app_id": 566
-  },
-  {
    "name": "ゆうり",
    "rank": "",
    "icon": "assets/icons/c099.webp",
@@ -905,12 +899,6 @@
    "rank": "",
    "icon": "assets/icons/c067.webp",
    "app_id": 504
-  },
-  {
-   "name": "魔桜エナ",
-   "rank": "",
-   "icon": "assets/icons/c026.webp",
-   "app_id": 381
   },
   {
    "name": "魔法少女ぴょん",
